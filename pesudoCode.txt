@@ -1,0 +1,18 @@
+Graph
+    Dijkstra:
+
+    Primes:
+
+
+    static vertex number
+    static edge number
+    adjacent list of Edges
+    array of vertices(id is index, val is vertex)
+
+Edge
+    getters
+    setters
+
+    this vertex id
+    that vertex id
+    
