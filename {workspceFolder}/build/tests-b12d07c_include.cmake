@@ -1,0 +1,5 @@
+if(EXISTS "/Users/machine_1997/Program/Graph/{workspceFolder}/build/tests-b12d07c_tests.cmake")
+  include("/Users/machine_1997/Program/Graph/{workspceFolder}/build/tests-b12d07c_tests.cmake")
+else()
+  add_test(tests_NOT_BUILT-b12d07c tests_NOT_BUILT-b12d07c)
+endif()

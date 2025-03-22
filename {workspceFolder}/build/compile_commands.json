@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/Users/machine_1997/Program/Graph/{workspceFolder}/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.7 -o CMakeFiles/Graph.dir/src/Edge.cpp.o -c /Users/machine_1997/Program/Graph/src/Edge.cpp",
+  "file": "/Users/machine_1997/Program/Graph/src/Edge.cpp",
+  "output": "CMakeFiles/Graph.dir/src/Edge.cpp.o"
+},
+{
+  "directory": "/Users/machine_1997/Program/Graph/{workspceFolder}/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.7 -o CMakeFiles/Graph.dir/tests/unitTests.cpp.o -c /Users/machine_1997/Program/Graph/tests/unitTests.cpp",
+  "file": "/Users/machine_1997/Program/Graph/tests/unitTests.cpp",
+  "output": "CMakeFiles/Graph.dir/tests/unitTests.cpp.o"
+},
+{
+  "directory": "/Users/machine_1997/Program/Graph/{workspceFolder}/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.7 -o CMakeFiles/Graph.dir/tests/catch_amalgamated.cpp.o -c /Users/machine_1997/Program/Graph/tests/catch_amalgamated.cpp",
+  "file": "/Users/machine_1997/Program/Graph/tests/catch_amalgamated.cpp",
+  "output": "CMakeFiles/Graph.dir/tests/catch_amalgamated.cpp.o"
+}
+]
