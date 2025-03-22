@@ -6,7 +6,7 @@
 	CompilerName="/Library/Developer/CommandLineTools/usr/bin/c++"
 	CompilerVersion="16.0.0.16000026"
 	OSName="macOS"
-	Hostname="microQuantumComputer95"
+	Hostname="microQuantumComputer95.local"
 	OSRelease="14.7.3"
 	OSVersion="23H417"
 	OSPlatform="x86_64"
@@ -25,11 +25,11 @@
 	ProcessorClockFrequency="1600"
 	>
 	<Testing>
-		<StartDateTime>Mar 21 22:07 EDT</StartDateTime>
-		<StartTestTime>1742609265</StartTestTime>
+		<StartDateTime>Mar 22 15:56 EDT</StartDateTime>
+		<StartTestTime>1742673363</StartTestTime>
 		<TestList/>
-		<EndDateTime>Mar 21 22:07 EDT</EndDateTime>
-		<EndTestTime>1742609265</EndTestTime>
+		<EndDateTime>Mar 22 15:56 EDT</EndDateTime>
+		<EndTestTime>1742673363</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>

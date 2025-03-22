@@ -1,5 +1,5 @@
 #include <iostream>
-#include "edge.cpp"
+#include "../include/Edge.h"
 
 int main(int argc, char const *argv[])
 {
