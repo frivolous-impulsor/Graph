@@ -6,6 +6,6 @@ include(CTest)
 
 enable_testing()
 
-add_executable(Graph src/Edge.cpp tests/unitTests.cpp tests/catch_amalgamated.cpp)
+add_executable(Graph src/edge.cpp tests/unitTests.cpp tests/catch_amalgamated.cpp)
 
 set_property(TARGET Graph PROPERTY CXX_STANDARD 17)

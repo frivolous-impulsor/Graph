@@ -1,4 +1,4 @@
-#include "../include/Edge.h"
+#include "../include/edge.h"
 #include <stdexcept>
 
 template <class T>

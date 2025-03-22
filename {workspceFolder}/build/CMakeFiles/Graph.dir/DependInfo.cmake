@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/machine_1997/Program/Graph/src/Edge.cpp" "CMakeFiles/Graph.dir/src/Edge.cpp.o" "gcc" "CMakeFiles/Graph.dir/src/Edge.cpp.o.d"
+  "/Users/machine_1997/Program/Graph/src/edge.cpp" "CMakeFiles/Graph.dir/src/edge.cpp.o" "gcc" "CMakeFiles/Graph.dir/src/edge.cpp.o.d"
   "/Users/machine_1997/Program/Graph/tests/catch_amalgamated.cpp" "CMakeFiles/Graph.dir/tests/catch_amalgamated.cpp.o" "gcc" "CMakeFiles/Graph.dir/tests/catch_amalgamated.cpp.o.d"
   "/Users/machine_1997/Program/Graph/tests/unitTests.cpp" "CMakeFiles/Graph.dir/tests/unitTests.cpp.o" "gcc" "CMakeFiles/Graph.dir/tests/unitTests.cpp.o.d"
   )

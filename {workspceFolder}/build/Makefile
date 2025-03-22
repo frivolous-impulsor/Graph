@@ -503,29 +503,29 @@ Graph/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/build
 .PHONY : Graph/fast
 
-src/Edge.o: src/Edge.cpp.o
-.PHONY : src/Edge.o
+src/edge.o: src/edge.cpp.o
+.PHONY : src/edge.o
 
 # target to build an object file
-src/Edge.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/src/Edge.cpp.o
-.PHONY : src/Edge.cpp.o
+src/edge.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/src/edge.cpp.o
+.PHONY : src/edge.cpp.o
 
-src/Edge.i: src/Edge.cpp.i
-.PHONY : src/Edge.i
+src/edge.i: src/edge.cpp.i
+.PHONY : src/edge.i
 
 # target to preprocess a source file
-src/Edge.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/src/Edge.cpp.i
-.PHONY : src/Edge.cpp.i
+src/edge.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/src/edge.cpp.i
+.PHONY : src/edge.cpp.i
 
-src/Edge.s: src/Edge.cpp.s
-.PHONY : src/Edge.s
+src/edge.s: src/edge.cpp.s
+.PHONY : src/edge.s
 
 # target to generate assembly for a file
-src/Edge.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/src/Edge.cpp.s
-.PHONY : src/Edge.cpp.s
+src/edge.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/src/edge.cpp.s
+.PHONY : src/edge.cpp.s
 
 tests/catch_amalgamated.o: tests/catch_amalgamated.cpp.o
 .PHONY : tests/catch_amalgamated.o
@@ -613,9 +613,9 @@ help:
 	@echo "... NightlyTest"
 	@echo "... NightlyUpdate"
 	@echo "... Graph"
-	@echo "... src/Edge.o"
-	@echo "... src/Edge.i"
-	@echo "... src/Edge.s"
+	@echo "... src/edge.o"
+	@echo "... src/edge.i"
+	@echo "... src/edge.s"
 	@echo "... tests/catch_amalgamated.o"
 	@echo "... tests/catch_amalgamated.i"
 	@echo "... tests/catch_amalgamated.s"

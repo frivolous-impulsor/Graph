@@ -1,5 +1,5 @@
 #include "../include/catch_amalgamated.hpp"
-#include "../include/Edge.h"
+#include "../include/edge.h"
 
 TEST_CASE( "Edges valid containers", "[Edge]" ) {
     Edge e{0, 1, 3};
