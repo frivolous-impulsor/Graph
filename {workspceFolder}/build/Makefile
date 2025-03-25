@@ -527,6 +527,30 @@ src/edge.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/src/edge.cpp.s
 .PHONY : src/edge.cpp.s
 
+src/graph.o: src/graph.cpp.o
+.PHONY : src/graph.o
+
+# target to build an object file
+src/graph.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/src/graph.cpp.o
+.PHONY : src/graph.cpp.o
+
+src/graph.i: src/graph.cpp.i
+.PHONY : src/graph.i
+
+# target to preprocess a source file
+src/graph.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/src/graph.cpp.i
+.PHONY : src/graph.cpp.i
+
+src/graph.s: src/graph.cpp.s
+.PHONY : src/graph.s
+
+# target to generate assembly for a file
+src/graph.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/src/graph.cpp.s
+.PHONY : src/graph.cpp.s
+
 tests/catch_amalgamated.o: tests/catch_amalgamated.cpp.o
 .PHONY : tests/catch_amalgamated.o
 
@@ -616,6 +640,9 @@ help:
 	@echo "... src/edge.o"
 	@echo "... src/edge.i"
 	@echo "... src/edge.s"
+	@echo "... src/graph.o"
+	@echo "... src/graph.i"
+	@echo "... src/graph.s"
 	@echo "... tests/catch_amalgamated.o"
 	@echo "... tests/catch_amalgamated.i"
 	@echo "... tests/catch_amalgamated.s"

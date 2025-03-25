@@ -2,37 +2,33 @@
 #define EDGE_H
 
 #include <iostream>
-#include <optional>
 
-template <typename T>
 class Edge{
 public:
-    Edge(const int thisV, const int thatV, const T weight);
+    Edge(const int thisV, const int thatV, const double weight = 1);
 
-
-
-    void setWeight(T newWeight){
+    void setWeight(double newWeight){
         this->m_weight = newWeight;
     }
 
-    T getWeight(){
+    double getWeight() const{
         return this->m_weight;
     }
 
-    int getThisVertex(){
+    int getThisVertex() const{
         return this->m_thisVertex;
     }
 
-    int getThatVertex(){
+    int getThatVertex() const{
         return this->m_thatVertex;
     }
+
+    bool operator<(const Edge& other) const ;
 
 private:
     int m_thisVertex{};
     int m_thatVertex{};
-    T m_weight{1};
-
-    
+    double m_weight{1};
 };
 
 #endif

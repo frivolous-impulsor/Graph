@@ -1,12 +1,18 @@
 #include "../include/catch_amalgamated.hpp"
 #include "../include/edge.h"
+#include "../src/graph.cpp"
 
 TEST_CASE( "Edges valid containers", "[Edge]" ) {
-    Edge e{0, 1, 3};
+    Edge e{0, 1, 3.2};
     SECTION("edge constructor"){
         REQUIRE( e.getThisVertex() == 0 );
         REQUIRE( e.getThatVertex() == 1 );
-        REQUIRE( e.getWeight() == 3 );
+        REQUIRE( e.getWeight() == 3.2 );
+    }
+
+    SECTION("default edge is of weight 1"){
+        Edge d{1,2};
+        REQUIRE(d.getWeight() == 1);
     }
 
     SECTION("edge setters"){
@@ -14,11 +20,12 @@ TEST_CASE( "Edges valid containers", "[Edge]" ) {
         REQUIRE(e.getWeight() == 5);
     }
 
-    SECTION("create double or float weighted edge"){
+    SECTION("create double or float or int weighted edge"){
         try
         {
-            Edge<double> d{1,2, 2.2};
-            Edge<float> f{2,3, 4.1f};
+            Edge i{0,1, 5};
+            Edge d{1,2, 2.2};
+            Edge f{2,3, 4.1f};
             REQUIRE(true);
         }
         catch(const std::exception& e)
@@ -39,6 +46,56 @@ TEST_CASE( "Edges valid containers", "[Edge]" ) {
             REQUIRE(true);
         }
         
+        
+    }
+}
+
+TEST_CASE( "Graph Unit Tests", "[Graph]") {
+    
+    SECTION("construct empty graph and add vertices of any content type"){
+        Graph<std::vector<int>> g{};
+        Edge e{0, 1};
+        REQUIRE(g.getNumVertex() == 0);
+        std::vector<int> testContent{};
+        g.addVertex(testContent);
+        g.addVertex(testContent);
+        g.addVertex(testContent);
+        REQUIRE(g.getNumVertex() == 3);
+        REQUIRE(g.getVertexList()[0].size() == 0);
+    }
+
+    SECTION("added vertices each take a spot in adjList"){
+        Graph<int> g{};
+        int testContent = -1;
+        g.addVertex(testContent);
+        g.addVertex(testContent);
+        REQUIRE(g.getAdjList()[0].size() == 0);
+        REQUIRE(g.getAdjList()[1].size() == 0);
+    }
+
+    SECTION("add edges to graph"){
+        Graph<int> g{};
+        
+        //add 3 vertices 0, 1, 2 to graph
+        int dummyContent = -1;
+        g.addVertex(dummyContent);
+        g.addVertex(dummyContent);
+        g.addVertex(dummyContent);
+
+        //add edge 0 -> 1, 1 -> 2, 0 -> 2
+        double dummyWeight {8.2};
+        const Edge e{0, 1, dummyWeight};
+        const Edge f{1, 2, dummyWeight};
+        const Edge h{0, 2, dummyWeight};
+        g.addEdgeOneWay(e);
+        g.addEdgeOneWay(f);
+        g.addEdgeOneWay(h);
+
+        REQUIRE(g.getAdjList()[0].size() == 2);
+        REQUIRE(g.getAdjList()[1].size() == 1);
+        REQUIRE(g.getAdjList()[2].size() == 0);
+
+        REQUIRE(g.getAdjList()[0].find(e) != g.getAdjList()[0].end());
         
     }
 }

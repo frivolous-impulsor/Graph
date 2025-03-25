@@ -982,5 +982,7 @@ CMakeFiles/Graph.dir/tests/unitTests.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/sstream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/istream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/set \
-  /Users/machine_1997/Program/Graph/tests/../include/Edge.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/iostream
+  /Users/machine_1997/Program/Graph/tests/../include/edge.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/iostream \
+  /Users/machine_1997/Program/Graph/tests/../src/graph.cpp \
+  /Users/machine_1997/Program/Graph/tests/../src/../include/edge.h

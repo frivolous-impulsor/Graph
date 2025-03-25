@@ -1,8 +1,7 @@
 #include "../include/edge.h"
 #include <stdexcept>
 
-template <class T>
-Edge<T>::Edge(const int thisV, const int thatV, const T weight)
+Edge::Edge(const int thisV, const int thatV, const double weight)
     : m_thisVertex{thisV}
     , m_thatVertex{thatV}
     , m_weight{weight}
@@ -12,9 +11,10 @@ Edge<T>::Edge(const int thisV, const int thatV, const T weight)
     }
 }
 
-void TemporaryFunction ()
-{
-    Edge<int> e{0,1,0};
-    Edge<double> f{0, 1,1.1};
-    Edge<float> g{0, 1, 1.2f};
+bool Edge::operator<(const Edge& other) const {
+    if (m_thisVertex != other.m_thisVertex) 
+        return m_thisVertex < other.getThisVertex();
+    if (m_thatVertex != other.getThatVertex()) 
+        return m_thatVertex < other.getThatVertex();
+    return m_weight < other.getWeight();
 }
