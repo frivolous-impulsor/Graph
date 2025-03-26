@@ -45,6 +45,10 @@ public:
         int finalSize{static_cast<int>(m_adjList[u].size())};
         m_numEdge += (finalSize - initSize);
     }
+
+    void addEdge(const Edge& e){
+        
+    }
     
 
 private:

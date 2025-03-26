@@ -14,7 +14,7 @@ Edge::Edge(const int thisV, const int thatV, const double weight)
 bool Edge::operator<(const Edge& other) const {
     if (m_thisVertex != other.m_thisVertex) 
         return m_thisVertex < other.getThisVertex();
-    if (m_thatVertex != other.getThatVertex()) 
-        return m_thatVertex < other.getThatVertex();
-    return m_weight < other.getWeight();
+    return m_thatVertex < other.getThatVertex();
 }
+
+

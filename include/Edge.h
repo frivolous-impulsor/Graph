@@ -23,7 +23,9 @@ public:
         return this->m_thatVertex;
     }
 
-    bool operator<(const Edge& other) const ;
+    bool operator<(const Edge& other) const;
+
+    bool operator==(const Edge& other) const;
 
 private:
     int m_thisVertex{};

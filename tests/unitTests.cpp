@@ -81,9 +81,11 @@ TEST_CASE( "Graph Unit Tests", "[Graph]") {
         g.addVertex(dummyContent);
         g.addVertex(dummyContent);
         g.addVertex(dummyContent);
+        g.addVertex(dummyContent);
 
         //add edge 0 -> 1, 1 -> 2, 0 -> 2
         double dummyWeight {8.2};
+        double dummyWeightDiff {5.3};
         const Edge e{0, 1, dummyWeight};
         const Edge f{1, 2, dummyWeight};
         const Edge h{0, 2, dummyWeight};
@@ -95,6 +97,10 @@ TEST_CASE( "Graph Unit Tests", "[Graph]") {
         REQUIRE(g.getAdjList()[1].size() == 1);
         REQUIRE(g.getAdjList()[2].size() == 0);
 
+        const Edge i{0, 2, dummyWeightDiff};    //edge i has same vertices of h, only different weight. h should be regarded duplicate of edge h and ignored
+        g.addEdgeOneWay(i);
+        REQUIRE(g.getAdjList()[0].size() == 2);
+        
         REQUIRE(g.getAdjList()[0].find(e) != g.getAdjList()[0].end());
         
     }
