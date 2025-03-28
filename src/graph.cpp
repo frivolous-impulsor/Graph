@@ -47,7 +47,9 @@ public:
     }
 
     void addEdge(const Edge& e){
-        
+        this->addEdgeOneWay(e);
+        const Edge f{e.getThatVertex(), e.getThisVertex(), e.getWeight()};
+        this->addEdgeOneWay(f);
     }
     
 

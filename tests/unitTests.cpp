@@ -73,7 +73,7 @@ TEST_CASE( "Graph Unit Tests", "[Graph]") {
         REQUIRE(g.getAdjList()[1].size() == 0);
     }
 
-    SECTION("add edges to graph"){
+    SECTION("add edges one way to graph"){
         Graph<int> g{};
         
         //add 3 vertices 0, 1, 2 to graph
@@ -100,8 +100,28 @@ TEST_CASE( "Graph Unit Tests", "[Graph]") {
         const Edge i{0, 2, dummyWeightDiff};    //edge i has same vertices of h, only different weight. h should be regarded duplicate of edge h and ignored
         g.addEdgeOneWay(i);
         REQUIRE(g.getAdjList()[0].size() == 2);
-        
+
         REQUIRE(g.getAdjList()[0].find(e) != g.getAdjList()[0].end());
         
+    }
+
+    SECTION("add edges 2 ways to graph"){
+        Graph<int> g{};
+        
+        //add 3 vertices 0, 1, 2 to graph
+        int dummyContent = -1;
+        g.addVertex(dummyContent);
+        g.addVertex(dummyContent);
+
+        const Edge e {0, 1};
+
+        g.addEdge(e);
+        REQUIRE(g.getAdjList()[0].size() == 1);
+        REQUIRE(g.getAdjList()[1].size() == 1);
+
+        REQUIRE((*g.getAdjList()[0].begin()).getThisVertex() == 0);
+        REQUIRE((*g.getAdjList()[0].begin()).getThatVertex() == 1);
+        REQUIRE((*g.getAdjList()[1].begin()).getThisVertex() == 1);
+        REQUIRE((*g.getAdjList()[1].begin()).getThatVertex() == 0);
     }
 }
