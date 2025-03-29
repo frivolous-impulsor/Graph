@@ -1,18 +1,17 @@
-Graph
-    Dijkstra:
+MST(){
+    s = 0   //starting vertex
+    mstSet  //set that marks vertices that are connected at current mst. Begin with starting vertex
+    minPQ   //initialize a minimum priority queue for Edges
+    mst     //a list of edges that, at the end, will connect all vertices and has smallest overall weight
+    For all edges going from starting vertex, put into minPQ based on weight
 
-    Primes:
+    while minPQ is not empty:
+        minEdge = minPQ.pop()
+        if minEdge in cut:  //let u and v be 2 vertices of minEdge, its in cut when exactly one of 2 vertices is in mstSet
+            newV    //the vertex not in mstSet to mstSet
+            include newV
+            For all edges going from newV, put into minPQ based on weight
+            mst add minEdge
 
-
-    static vertex number
-    static edge number
-    adjacent list of Edges
-    array of vertices(id is index, val is vertex)
-
-Edge
-    getters
-    setters
-
-    this vertex id
-    that vertex id
-    
+    return mst
+}
