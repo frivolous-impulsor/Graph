@@ -5,7 +5,7 @@ MST(){
     mst     //a list of edges that, at the end, will connect all vertices and has smallest overall weight
     For all edges going from starting vertex, put into minPQ based on weight
 
-    while minPQ is not empty:
+    while minPQ is not empty and mstSet haven't included all vertices:
         minEdge = minPQ.pop()
         if minEdge in cut:  //let u and v be 2 vertices of minEdge, its in cut when exactly one of 2 vertices is in mstSet
             newV    //the vertex not in mstSet to mstSet

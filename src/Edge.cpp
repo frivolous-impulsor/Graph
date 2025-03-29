@@ -11,10 +11,15 @@ Edge::Edge(const int thisV, const int thatV, const double weight)
     }
 }
 
+
 bool Edge::operator<(const Edge& other) const {
-    if (m_thisVertex != other.m_thisVertex) 
-        return m_thisVertex < other.getThisVertex();
-    return m_thatVertex < other.getThatVertex();
+    return m_weight > other.getWeight();
+}
+
+bool Edge::operator==(const Edge& other) const {
+    const bool go   = (m_thisVertex == other.getThisVertex()) && (m_thatVertex == other.getThatVertex());
+    const bool come = (m_thisVertex == other.getThatVertex()) && (m_thatVertex == other.getThisVertex());
+    return (go || come);
 }
 
 

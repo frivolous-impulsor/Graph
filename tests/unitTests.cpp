@@ -72,7 +72,7 @@ TEST_CASE( "Graph Unit Tests", "[Graph]") {
         REQUIRE(g.getAdjList()[0].size() == 0);
         REQUIRE(g.getAdjList()[1].size() == 0);
     }
-
+    /*
     SECTION("add edges one way to graph"){
         Graph<int> g{};
         
@@ -104,6 +104,7 @@ TEST_CASE( "Graph Unit Tests", "[Graph]") {
         REQUIRE(g.getAdjList()[0].find(e) != g.getAdjList()[0].end());
         
     }
+    */
 
     SECTION("throw exception when attempting to add invalid edge that has undefined vertex"){
         Graph<int> g{};
@@ -142,8 +143,9 @@ TEST_CASE( "Graph Unit Tests", "[Graph]") {
         REQUIRE((*g.getAdjList()[1].begin()).getThisVertex() == 1);
         REQUIRE((*g.getAdjList()[1].begin()).getThatVertex() == 0);
     }
+}
 
-
+TEST_CASE( "Graph Operation Unit Tests", "[Graph Operation]") {
     SECTION("minimum spanning tree validation"){
         Graph<int> g{};
         int dummyContent = -1;
@@ -151,21 +153,24 @@ TEST_CASE( "Graph Unit Tests", "[Graph]") {
             g.addVertex(dummyContent);
         }
         g.addEdge({0,1,4});
-        
         g.addEdge({0,7,8});
         g.addEdge({1,2,8});
         g.addEdge({1,7,11});
+
         g.addEdge({7,8,7});
         g.addEdge({7,6,1});
         g.addEdge({2,3,7});
         g.addEdge({6,8,6});
         g.addEdge({2,8,2});
+        
         g.addEdge({2,5,4});
+        g.addEdge({5,6,2});
         g.addEdge({3,5,14});
         g.addEdge({3,4,9});
         g.addEdge({5,4,10});
         
-        vector<int> answer {};
+        std::vector<Edge> answer {};
+        answer.push_back({0,1,4});
         REQUIRE(g.mst() == answer);
     }
 }

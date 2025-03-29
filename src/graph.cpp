@@ -4,6 +4,10 @@
 #include <vector>
 #include <stdexcept>
 
+/*
+An implementation of undirected weighted graph
+*/
+
 template <typename T> 
 class Graph{
 public:
@@ -24,6 +28,40 @@ public:
         m_numVertex++;
     }
 
+
+
+    void addEdge(const Edge& e){
+        this->addEdgeOneWay(e);
+        const Edge f{e.getThatVertex(), e.getThisVertex(), e.getWeight()};
+        this->addEdgeOneWay(f);
+    }
+
+    std::vector<Edge> mst(){
+        std::vector<Edge> mst{};
+        std::priority_queue<Edge> minPQ;
+        int startingV {0};
+        std::set<int> mstVertexSet{};
+        mstVertexSet.insert(startingV);
+        minPQ.push({0,1,4});
+        for (auto e: this->getAdjList()[startingV]){
+            minPQ.push(e);
+        }
+
+
+        while (!minPQ.empty() && (mst.size() < m.getNumVertex() -1))
+        mst.push_back(minPQ.top());
+        minPQ
+
+        return mst;
+    }
+
+
+private:
+    int m_numVertex{0};
+    int m_numEdge{0};
+    std::vector<std::set<Edge>> m_adjList{};  //a vector of sets of edges
+    std::vector<T> m_vertexList{};
+
     //only add edge from this vertex to that vertex
     void addEdgeOneWay(const Edge& e){
         int u {e.getThisVertex()};
@@ -36,16 +74,4 @@ public:
         int finalSize{static_cast<int>(m_adjList[u].size())};
         m_numEdge += (finalSize - initSize);
     }
-
-    void addEdge(const Edge& e){
-        this->addEdgeOneWay(e);
-        const Edge f{e.getThatVertex(), e.getThisVertex(), e.getWeight()};
-        this->addEdgeOneWay(f);
-    }
-
-private:
-    int m_numVertex{0};
-    int m_numEdge{0};
-    std::vector<std::set<Edge>> m_adjList{};  //a vector of sets of edges
-    std::vector<T> m_vertexList{};
 };
