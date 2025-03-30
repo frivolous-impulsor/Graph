@@ -1,4 +1,4 @@
-#include "../include/edge.h"
+#include "../include/edge.hpp"
 #include <stdexcept>
 
 Edge::Edge(const int thisV, const int thatV, const double weight)
@@ -11,9 +11,8 @@ Edge::Edge(const int thisV, const int thatV, const double weight)
     }
 }
 
-
 bool Edge::operator<(const Edge& other) const {
-    return m_weight > other.getWeight();
+    return m_weight < other.getWeight();
 }
 
 bool Edge::operator==(const Edge& other) const {
@@ -22,4 +21,9 @@ bool Edge::operator==(const Edge& other) const {
     return (go || come);
 }
 
+std::ostream& operator<<(std::ostream& os, const Edge& e)
+{
+    os <<"["<< e.getThisVertex() << " - " << e.getThatVertex() << " : " << e.getWeight() <<"]";
+    return os;
+}
 

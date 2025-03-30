@@ -1,6 +1,6 @@
 CMakeFiles/Graph.dir/src/edge.cpp.o: \
   /Users/machine_1997/Program/Graph/src/edge.cpp \
-  /Users/machine_1997/Program/Graph/src/../include/edge.h \
+  /Users/machine_1997/Program/Graph/src/../include/edge.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__assert \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__assertion_handler \

@@ -551,6 +551,30 @@ src/graph.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/src/graph.cpp.s
 .PHONY : src/graph.cpp.s
 
+src/indexPriorityQueue.o: src/indexPriorityQueue.cpp.o
+.PHONY : src/indexPriorityQueue.o
+
+# target to build an object file
+src/indexPriorityQueue.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/src/indexPriorityQueue.cpp.o
+.PHONY : src/indexPriorityQueue.cpp.o
+
+src/indexPriorityQueue.i: src/indexPriorityQueue.cpp.i
+.PHONY : src/indexPriorityQueue.i
+
+# target to preprocess a source file
+src/indexPriorityQueue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/src/indexPriorityQueue.cpp.i
+.PHONY : src/indexPriorityQueue.cpp.i
+
+src/indexPriorityQueue.s: src/indexPriorityQueue.cpp.s
+.PHONY : src/indexPriorityQueue.s
+
+# target to generate assembly for a file
+src/indexPriorityQueue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/src/indexPriorityQueue.cpp.s
+.PHONY : src/indexPriorityQueue.cpp.s
+
 tests/catch_amalgamated.o: tests/catch_amalgamated.cpp.o
 .PHONY : tests/catch_amalgamated.o
 
@@ -643,6 +667,9 @@ help:
 	@echo "... src/graph.o"
 	@echo "... src/graph.i"
 	@echo "... src/graph.s"
+	@echo "... src/indexPriorityQueue.o"
+	@echo "... src/indexPriorityQueue.i"
+	@echo "... src/indexPriorityQueue.s"
 	@echo "... tests/catch_amalgamated.o"
 	@echo "... tests/catch_amalgamated.i"
 	@echo "... tests/catch_amalgamated.s"

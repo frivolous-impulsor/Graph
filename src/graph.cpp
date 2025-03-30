@@ -1,6 +1,6 @@
 #include <iostream>
 #include <set>
-#include "../include/edge.h" 
+#include "../include/edge.hpp" 
 #include <vector>
 #include <stdexcept>
 
@@ -38,19 +38,13 @@ public:
 
     std::vector<Edge> mst(){
         std::vector<Edge> mst{};
-        std::priority_queue<Edge> minPQ;
+        //std::priority_queue<Edge> minPQ;
         int startingV {0};
         std::set<int> mstVertexSet{};
         mstVertexSet.insert(startingV);
-        minPQ.push({0,1,4});
-        for (auto e: this->getAdjList()[startingV]){
-            minPQ.push(e);
-        }
 
-
-        while (!minPQ.empty() && (mst.size() < m.getNumVertex() -1))
-        mst.push_back(minPQ.top());
-        minPQ
+        
+ 
 
         return mst;
     }
@@ -74,4 +68,5 @@ private:
         int finalSize{static_cast<int>(m_adjList[u].size())};
         m_numEdge += (finalSize - initSize);
     }
+
 };

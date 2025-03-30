@@ -982,7 +982,8 @@ CMakeFiles/Graph.dir/tests/unitTests.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/sstream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/istream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/set \
-  /Users/machine_1997/Program/Graph/tests/../include/edge.h \
+  /Users/machine_1997/Program/Graph/tests/../include/edge.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/iostream \
   /Users/machine_1997/Program/Graph/tests/../src/graph.cpp \
-  /Users/machine_1997/Program/Graph/tests/../src/../include/edge.h
+  /Users/machine_1997/Program/Graph/tests/../src/../include/edge.hpp \
+  /Users/machine_1997/Program/Graph/tests/../src/indexPriorityQueue.cpp
