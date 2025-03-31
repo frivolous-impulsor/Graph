@@ -108,28 +108,38 @@ public:
     }
 
     void insert(T content, double value){
-        //check if content exists, if so, only update
         if(m_content2index.find(content) != m_content2index.end()){
             this->update(content, value);
             return;
         }
 
+        //check if content exists, if so, only update
+        int queueSize {this->getSize()};
+        int mapSize {static_cast<int>(m_inverseMap.size())};
+        //when popped, queue size will decrement, 
+        //but map size stay the same. node query will base on queue size
+        if(queueSize < mapSize){
+            //popped, newly inserted element will inherit the key of the element just beyond the queue size
+            int key {m_inverseMap[queueSize]};
+            m_values[key] = (this->isMax()) ? value : -value;
+            m_content[key] = content;
+            m_content2index[content] = key;
 
-        int size {this->getSize()};
-        m_content.push_back(content);
-        m_content2index[content] = size;
 
-        if(m_isMax){
-            m_values.push_back(value);
         }else{
-            m_values.push_back(-value);
+            //add fresh element to queue
+            if(this->isMax()){
+                m_values.push_back(value);
+            }else{
+                m_values.push_back(-value);
+            }
+            m_content.push_back(content);
+            m_content2index[content] = queueSize;
+            m_inverseMap.push_back(queueSize);
+            m_positionMap.push_back(queueSize);
         }
-
-        m_positionMap.push_back(size);
-        m_inverseMap.push_back(size);
-        this->swim(size);
-        this->m_size++;
-        
+        m_size++;
+        this->swim(queueSize);
     }
 
     T peek(){
@@ -144,10 +154,11 @@ public:
 
         int key {m_inverseMap[0]};
         T content{m_content[key]};
-        m_content2index.erase(content);
+
         int iLastItem {this->getSize() - 1};
         this->swap(0, iLastItem);
-        this->m_size--;
+        m_content2index.erase(content);
+        m_size--;
 
         if(!(this->empty())){
             this->sink(0);
@@ -157,6 +168,10 @@ public:
     }
 
     void update(T content, double newVal){
+        if(m_content2index.find(content) == m_content2index.end()){
+            return;
+        }
+
         int key {m_content2index[content]};
         double val {m_values[key]};
         m_values[key] = newVal;
@@ -176,4 +191,5 @@ private:
     std::unordered_map<T, int> m_content2index {};
     std::vector<int> m_positionMap {};
     std::vector<int> m_inverseMap {};
+
 };

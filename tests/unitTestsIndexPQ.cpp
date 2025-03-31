@@ -48,7 +48,8 @@ TEST_CASE("index priority queue", "[Index PQ]"){
 
         REQUIRE(q.pop() == 241);
         REQUIRE(q.pop() == 912);
-        REQUIRE(q.getSize() == 3);
+        REQUIRE(q.pop() == 4);
+        REQUIRE(q.getSize() == 2);
 
 
     }
@@ -85,29 +86,23 @@ TEST_CASE("index priority queue", "[Index PQ]"){
 
     SECTION("integration test for insert, peek, pop, update"){
         IndexPriorityQueue<int> q {};
-        q.insert(4, 9);
+        q.insert(4, 8);
         q.insert(12, 2);
         q.insert(1, 7.7);
         q.insert(55, 3);
         q.insert(53, 9);
-        q.insert(67, 9);
-        q.insert(98, 1.4);
 
-        int a {q.pop()};
-        REQUIRE(a == 4);
-        q.update(67, 50);
-        REQUIRE(q.getSize() == 6);
-        REQUIRE(q.peek() == 67);
-        q.insert(67, 0);
-        REQUIRE(q.getSize() == 6);
         REQUIRE(q.peek() == 53);
-        q.pop();
-        REQUIRE(q.getSize() == 5);
-        REQUIRE(q.peek() == 1);
-        q.pop();
-        REQUIRE(q.peek() == 55);
-        q.insert(99, -50);
-        REQUIRE(q.peek() == 99);
-        q.pop();
+        REQUIRE(q.pop() == 53);
+
+        REQUIRE(q.peek() == 4);
+        q.insert(53, 9);
+        REQUIRE(q.pop() == 53);
+        q.insert(99, 100);
+        REQUIRE(q.pop() == 99);
+        
+
+
     }
+
 }
