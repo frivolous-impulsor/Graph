@@ -100,9 +100,72 @@ TEST_CASE("index priority queue", "[Index PQ]"){
         REQUIRE(q.pop() == 53);
         q.insert(99, 100);
         REQUIRE(q.pop() == 99);
+        REQUIRE(q.pop() == 4);
+        q.insert(12, 5);
+        q.insert(16, 0);
+        q.insert(12,10);
+        REQUIRE(q.pop() == 12);
+        REQUIRE(q.pop() == 1);
         
+    }
 
+    SECTION("integration testing on min priority queue"){
+        IndexPriorityQueue<int> q {false};
+        q.insert(1,8);
+        q.insert(2,6);
+        q.insert(10,3);
+        q.insert(11,3);
+        q.insert(9,111);
+        q.insert(223,90);
+        REQUIRE(q.pop() == 10);
+        REQUIRE(q.pop() == 11);
+        q.insert(223, 0);
+        REQUIRE(q.pop() == 223);
+        q.update(9, 2);
+        REQUIRE(q.pop() == 9);
+    }
 
+    SECTION("fuzz testing on queue"){
+        //testing functions: insert(0), update(1), pop(2), peek(3)
+        int iterations {100000};
+        int whichFunct {0};
+        IndexPriorityQueue<int> q {};
+        int u {0};
+        int v {0};
+        for(int i {0}; i < iterations; ++i){
+            whichFunct = std::rand() % 4;
+            switch(whichFunct) {
+                case 0:
+                    //std::cout<<"insert case\n";
+                    u = rand();
+                    v = rand(); 
+                    q.insert(u, v);
+                    break;
+                case 1:
+                    //std::cout<<"update case\n";
+                    u = rand();
+                    v = rand(); 
+                    q.update(u, v);
+                    break;
+                case 2:
+                    //std::cout<<"pop case\n";
+
+                    if(!q.empty()){
+                        q.pop();
+                    }
+                    break;
+                case 3:
+                    //std::cout<<"peek case\n";
+
+                    if(!q.empty()){
+                        q.peek();
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+        REQUIRE(true);
     }
 
 }

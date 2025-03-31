@@ -8,13 +8,7 @@ class IndexPriorityQueue{
 public:
     IndexPriorityQueue(bool isMax = true):
         m_isMax {isMax}
-    {
-        if(isMax){
-            std::cout<<"new max priority queue constructed\n";
-        }else{
-            std::cout<<"new min priority queue constructed\n";
-        }
-    }
+    {}
 
     bool isMax(){
         return m_isMax;
@@ -143,6 +137,10 @@ public:
     }
 
     T peek(){
+        if(this->empty()){
+            throw std::underflow_error("priority queue empty, cannot peek");
+        }
+
         int key {m_inverseMap[0]};
         return m_content[key];
     }
@@ -168,9 +166,12 @@ public:
     }
 
     void update(T content, double newVal){
+
         if(m_content2index.find(content) == m_content2index.end()){
             return;
         }
+
+        newVal = (this->isMax())? newVal : -newVal;
 
         int key {m_content2index[content]};
         double val {m_values[key]};
