@@ -2,6 +2,8 @@
 #include "../include/edge.hpp"
 #include "../src/graph.cpp"
 #include "../src/indexPriorityQueue.cpp"
+#include <stdexcept>
+	
 
 TEST_CASE( "Edges valid containers", "[Edge]" ) {
     Edge e{0, 1, 3.2};
@@ -241,8 +243,17 @@ TEST_CASE("index priority queue", "[Index PQ]"){
     }
 
     SECTION("integration test for insert, peek, pop, update"){
-        IndexPriorityQueue<Edge> q {};
-        
+        IndexPriorityQueue<int> q {};
+        q.insert(0, 9);
+        q.insert(1, 2);
+        q.insert(2, 7.7);
+        q.insert(3, 3);
+        q.insert(4, 9);
+        q.insert(5, 9);
+        q.insert(6, 1.4);
+
+        Edge r {q.pop()};
+        REQUIRE(r == a);
     }
 
 }

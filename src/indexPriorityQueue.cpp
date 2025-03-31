@@ -6,8 +6,26 @@
 template <typename T>
 class IndexPriorityQueue{
 public:
+    IndexPriorityQueue(bool isMax = true):
+        m_isMax {isMax}
+    {
+        if(isMax){
+            std::cout<<"new max priority queue constructed\n";
+        }else{
+            std::cout<<"new min priority queue constructed\n";
+        }
+    }
+
+    bool isMax(){
+        return m_isMax;
+    }
+
     int getSize(){
         return m_size;
+    }
+
+    bool empty(){
+        return m_size < 1;
     }
 
     std::vector<int>& getPositionMap(){
@@ -16,7 +34,6 @@ public:
     std::vector<int>& getInverseMap(){
         return m_inverseMap;
     }
-    
 
     void printVal(){
         for(auto val: m_values){
@@ -91,10 +108,23 @@ public:
     }
 
     void insert(T content, double value){
+        //check if content exists, if so, only update
+        if(m_content2index.find(content) != m_content2index.end()){
+            this->update(content, value);
+            return;
+        }
+
+
         int size {this->getSize()};
         m_content.push_back(content);
         m_content2index[content] = size;
-        m_values.push_back(value);
+
+        if(m_isMax){
+            m_values.push_back(value);
+        }else{
+            m_values.push_back(-value);
+        }
+
         m_positionMap.push_back(size);
         m_inverseMap.push_back(size);
         this->swim(size);
@@ -102,23 +132,26 @@ public:
         
     }
 
-    T& peek(){
+    T peek(){
         int key {m_inverseMap[0]};
         return m_content[key];
     }
 
     T pop(){
-        if(this->getSize() < 1){
-            throw 
+        if(this->empty()){
+            throw std::underflow_error("priority queue empty, cannot pop");
         }
 
         int key {m_inverseMap[0]};
         T content{m_content[key]};
-        m_content2index[content] = -1;
+        m_content2index.erase(content);
         int iLastItem {this->getSize() - 1};
         this->swap(0, iLastItem);
         this->m_size--;
-        this->sink(0);
+
+        if(!(this->empty())){
+            this->sink(0);
+        }
 
         return content;
     }
@@ -136,6 +169,7 @@ public:
     }
 
 private:
+    bool m_isMax {true};
     int m_size {0};
     std::vector<double> m_values {};
     std::vector<T> m_content {};

@@ -19,9 +19,9 @@
 },
 {
   "directory": "/Users/machine_1997/Program/Graph/{workspceFolder}/build",
-  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.7 -o CMakeFiles/Graph.dir/tests/unitTests.cpp.o -c /Users/machine_1997/Program/Graph/tests/unitTests.cpp",
-  "file": "/Users/machine_1997/Program/Graph/tests/unitTests.cpp",
-  "output": "CMakeFiles/Graph.dir/tests/unitTests.cpp.o"
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.7 -o CMakeFiles/Graph.dir/tests/unitTestsIndexPQ.cpp.o -c /Users/machine_1997/Program/Graph/tests/unitTestsIndexPQ.cpp",
+  "file": "/Users/machine_1997/Program/Graph/tests/unitTestsIndexPQ.cpp",
+  "output": "CMakeFiles/Graph.dir/tests/unitTestsIndexPQ.cpp.o"
 },
 {
   "directory": "/Users/machine_1997/Program/Graph/{workspceFolder}/build",

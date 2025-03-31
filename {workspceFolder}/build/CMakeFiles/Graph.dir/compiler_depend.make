@@ -3963,7 +3963,7 @@ CMakeFiles/Graph.dir/tests/catch_amalgamated.cpp.o: /Users/machine_1997/Program/
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/stdint.h \
   /Users/machine_1997/Program/Graph/include/catch_amalgamated.hpp
 
-CMakeFiles/Graph.dir/tests/unitTests.cpp.o: /Users/machine_1997/Program/Graph/tests/unitTests.cpp \
+CMakeFiles/Graph.dir/tests/unitTestsIndexPQ.cpp.o: /Users/machine_1997/Program/Graph/tests/unitTestsIndexPQ.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/Availability.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/AvailabilityInternal.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/AvailabilityInternalLegacy.h \
@@ -4947,9 +4947,6 @@ CMakeFiles/Graph.dir/tests/unitTests.cpp.o: /Users/machine_1997/Program/Graph/te
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/stddef.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/stdint.h \
   /Users/machine_1997/Program/Graph/include/catch_amalgamated.hpp \
-  /Users/machine_1997/Program/Graph/include/edge.hpp \
-  /Users/machine_1997/Program/Graph/include/edge.hpp \
-  /Users/machine_1997/Program/Graph/src/graph.cpp \
   /Users/machine_1997/Program/Graph/src/indexPriorityQueue.cpp
 
 
@@ -6559,6 +6556,8 @@ CMakeFiles/Graph.dir/tests/unitTests.cpp.o: /Users/machine_1997/Program/Graph/te
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__algorithm/ranges_reverse_copy.h:
 
+/Users/machine_1997/Program/Graph/tests/unitTestsIndexPQ.cpp:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__type_traits/is_member_pointer.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__algorithm/ranges_reverse.h:
@@ -6666,8 +6665,6 @@ CMakeFiles/Graph.dir/tests/unitTests.cpp.o: /Users/machine_1997/Program/Graph/te
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/_types/_uint64_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__algorithm/pstl_replace.h:
-
-/Users/machine_1997/Program/Graph/tests/unitTests.cpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__algorithm/ranges_equal.h:
 

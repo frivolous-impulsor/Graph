@@ -599,29 +599,29 @@ tests/catch_amalgamated.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/tests/catch_amalgamated.cpp.s
 .PHONY : tests/catch_amalgamated.cpp.s
 
-tests/unitTests.o: tests/unitTests.cpp.o
-.PHONY : tests/unitTests.o
+tests/unitTestsIndexPQ.o: tests/unitTestsIndexPQ.cpp.o
+.PHONY : tests/unitTestsIndexPQ.o
 
 # target to build an object file
-tests/unitTests.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/tests/unitTests.cpp.o
-.PHONY : tests/unitTests.cpp.o
+tests/unitTestsIndexPQ.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/tests/unitTestsIndexPQ.cpp.o
+.PHONY : tests/unitTestsIndexPQ.cpp.o
 
-tests/unitTests.i: tests/unitTests.cpp.i
-.PHONY : tests/unitTests.i
+tests/unitTestsIndexPQ.i: tests/unitTestsIndexPQ.cpp.i
+.PHONY : tests/unitTestsIndexPQ.i
 
 # target to preprocess a source file
-tests/unitTests.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/tests/unitTests.cpp.i
-.PHONY : tests/unitTests.cpp.i
+tests/unitTestsIndexPQ.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/tests/unitTestsIndexPQ.cpp.i
+.PHONY : tests/unitTestsIndexPQ.cpp.i
 
-tests/unitTests.s: tests/unitTests.cpp.s
-.PHONY : tests/unitTests.s
+tests/unitTestsIndexPQ.s: tests/unitTestsIndexPQ.cpp.s
+.PHONY : tests/unitTestsIndexPQ.s
 
 # target to generate assembly for a file
-tests/unitTests.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/tests/unitTests.cpp.s
-.PHONY : tests/unitTests.cpp.s
+tests/unitTestsIndexPQ.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/tests/unitTestsIndexPQ.cpp.s
+.PHONY : tests/unitTestsIndexPQ.cpp.s
 
 # Help Target
 help:
@@ -673,9 +673,9 @@ help:
 	@echo "... tests/catch_amalgamated.o"
 	@echo "... tests/catch_amalgamated.i"
 	@echo "... tests/catch_amalgamated.s"
-	@echo "... tests/unitTests.o"
-	@echo "... tests/unitTests.i"
-	@echo "... tests/unitTests.s"
+	@echo "... tests/unitTestsIndexPQ.o"
+	@echo "... tests/unitTestsIndexPQ.i"
+	@echo "... tests/unitTestsIndexPQ.s"
 .PHONY : help
 
 
