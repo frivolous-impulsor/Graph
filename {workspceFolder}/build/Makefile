@@ -599,29 +599,29 @@ tests/catch_amalgamated.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/tests/catch_amalgamated.cpp.s
 .PHONY : tests/catch_amalgamated.cpp.s
 
-tests/unitTestsIndexPQ.o: tests/unitTestsIndexPQ.cpp.o
-.PHONY : tests/unitTestsIndexPQ.o
+tests/integrationTests.o: tests/integrationTests.cpp.o
+.PHONY : tests/integrationTests.o
 
 # target to build an object file
-tests/unitTestsIndexPQ.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/tests/unitTestsIndexPQ.cpp.o
-.PHONY : tests/unitTestsIndexPQ.cpp.o
+tests/integrationTests.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/tests/integrationTests.cpp.o
+.PHONY : tests/integrationTests.cpp.o
 
-tests/unitTestsIndexPQ.i: tests/unitTestsIndexPQ.cpp.i
-.PHONY : tests/unitTestsIndexPQ.i
+tests/integrationTests.i: tests/integrationTests.cpp.i
+.PHONY : tests/integrationTests.i
 
 # target to preprocess a source file
-tests/unitTestsIndexPQ.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/tests/unitTestsIndexPQ.cpp.i
-.PHONY : tests/unitTestsIndexPQ.cpp.i
+tests/integrationTests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/tests/integrationTests.cpp.i
+.PHONY : tests/integrationTests.cpp.i
 
-tests/unitTestsIndexPQ.s: tests/unitTestsIndexPQ.cpp.s
-.PHONY : tests/unitTestsIndexPQ.s
+tests/integrationTests.s: tests/integrationTests.cpp.s
+.PHONY : tests/integrationTests.s
 
 # target to generate assembly for a file
-tests/unitTestsIndexPQ.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/tests/unitTestsIndexPQ.cpp.s
-.PHONY : tests/unitTestsIndexPQ.cpp.s
+tests/integrationTests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/tests/integrationTests.cpp.s
+.PHONY : tests/integrationTests.cpp.s
 
 # Help Target
 help:
@@ -673,9 +673,9 @@ help:
 	@echo "... tests/catch_amalgamated.o"
 	@echo "... tests/catch_amalgamated.i"
 	@echo "... tests/catch_amalgamated.s"
-	@echo "... tests/unitTestsIndexPQ.o"
-	@echo "... tests/unitTestsIndexPQ.i"
-	@echo "... tests/unitTestsIndexPQ.s"
+	@echo "... tests/integrationTests.o"
+	@echo "... tests/integrationTests.i"
+	@echo "... tests/integrationTests.s"
 .PHONY : help
 
 

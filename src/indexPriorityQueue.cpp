@@ -22,85 +22,6 @@ public:
         return m_size < 1;
     }
 
-    std::vector<int>& getPositionMap(){
-        return m_positionMap;
-    }
-    std::vector<int>& getInverseMap(){
-        return m_inverseMap;
-    }
-
-    void printVal(){
-        for(auto val: m_values){
-            std::cout<<val<<" ";
-        }
-        std::cout<<'\n';
-    }
-
-    void printPositionMap(){
-        for(auto val: m_positionMap){
-            std::cout<<val<<" ";
-        }
-        std::cout<<'\n';
-    }
-
-    void printInverseMap(){
-        for(auto val: m_inverseMap){
-            std::cout<<val<<" ";
-        }
-        std::cout<<'\n';
-    }
-    
-
-    void swap(int p1, int p2){
-        m_positionMap[m_inverseMap[p1]] = p2;
-        m_positionMap[m_inverseMap[p2]] = p1;
-        int temp {m_inverseMap[p1]};
-        m_inverseMap[p1] = m_inverseMap[p2];
-        m_inverseMap[p2] = temp;
-    }
-
-    void swim(int position){
-        int key {m_inverseMap[position]};
-        double val {m_values[key]};
-        int parentPosition {(position -1)/2};
-        while(parentPosition >= 0){
-            int parentKey {m_inverseMap[parentPosition]};
-            double parentVal {m_values[parentKey]};
-            if(parentVal < val){
-                this->swap(position, parentPosition);
-                position = parentPosition;
-                parentPosition = (position-1)/2;
-            }else{
-                break;
-            }
-        }
-    }
-
-    void sink(int position){
-        double val {m_values[m_inverseMap[position]]};
-
-        while(1){
-            int leftPosition {position*2 + 1};
-            int rightPosition {position*2 + 2};
-            if(leftPosition >= this->getSize()){
-                break;
-            }
-            int biggerPosition {leftPosition};
-            int leftKey {m_inverseMap[leftPosition]};
-            double leftVal {m_values[leftKey]};
-            if(rightPosition < this->getSize() && m_values[m_inverseMap[rightPosition]] > leftVal){
-                biggerPosition = rightPosition;
-            }
-            double biggerVal {m_values[m_inverseMap[biggerPosition]]};
-            if(val < biggerVal){
-                swap(position, biggerPosition);
-                position = biggerPosition;
-            }else{
-                break;
-            }
-        }
-    }
-
     void insert(T content, double value){
         if(m_content2index.find(content) != m_content2index.end()){
             this->update(content, value);
@@ -192,5 +113,84 @@ private:
     std::unordered_map<T, int> m_content2index {};
     std::vector<int> m_positionMap {};
     std::vector<int> m_inverseMap {};
+
+    std::vector<int>& getPositionMap(){
+        return m_positionMap;
+    }
+    std::vector<int>& getInverseMap(){
+        return m_inverseMap;
+    }
+
+    void printVal(){
+        for(auto val: m_values){
+            std::cout<<val<<" ";
+        }
+        std::cout<<'\n';
+    }
+
+    void printPositionMap(){
+        for(auto val: m_positionMap){
+            std::cout<<val<<" ";
+        }
+        std::cout<<'\n';
+    }
+
+    void printInverseMap(){
+        for(auto val: m_inverseMap){
+            std::cout<<val<<" ";
+        }
+        std::cout<<'\n';
+    }
+    
+
+    void swap(int p1, int p2){
+        m_positionMap[m_inverseMap[p1]] = p2;
+        m_positionMap[m_inverseMap[p2]] = p1;
+        int temp {m_inverseMap[p1]};
+        m_inverseMap[p1] = m_inverseMap[p2];
+        m_inverseMap[p2] = temp;
+    }
+
+    void swim(int position){
+        int key {m_inverseMap[position]};
+        double val {m_values[key]};
+        int parentPosition {(position -1)/2};
+        while(parentPosition >= 0){
+            int parentKey {m_inverseMap[parentPosition]};
+            double parentVal {m_values[parentKey]};
+            if(parentVal < val){
+                this->swap(position, parentPosition);
+                position = parentPosition;
+                parentPosition = (position-1)/2;
+            }else{
+                break;
+            }
+        }
+    }
+
+    void sink(int position){
+        double val {m_values[m_inverseMap[position]]};
+
+        while(1){
+            int leftPosition {position*2 + 1};
+            int rightPosition {position*2 + 2};
+            if(leftPosition >= this->getSize()){
+                break;
+            }
+            int biggerPosition {leftPosition};
+            int leftKey {m_inverseMap[leftPosition]};
+            double leftVal {m_values[leftKey]};
+            if(rightPosition < this->getSize() && m_values[m_inverseMap[rightPosition]] > leftVal){
+                biggerPosition = rightPosition;
+            }
+            double biggerVal {m_values[m_inverseMap[biggerPosition]]};
+            if(val < biggerVal){
+                swap(position, biggerPosition);
+                position = biggerPosition;
+            }else{
+                break;
+            }
+        }
+    }
 
 };

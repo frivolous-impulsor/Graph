@@ -114,19 +114,19 @@ CMakeFiles/Graph.dir/src/indexPriorityQueue.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Graph.dir/src/indexPriorityQueue.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/machine_1997/Program/Graph/src/indexPriorityQueue.cpp -o CMakeFiles/Graph.dir/src/indexPriorityQueue.cpp.s
 
-CMakeFiles/Graph.dir/tests/unitTestsIndexPQ.cpp.o: CMakeFiles/Graph.dir/flags.make
-CMakeFiles/Graph.dir/tests/unitTestsIndexPQ.cpp.o: /Users/machine_1997/Program/Graph/tests/unitTestsIndexPQ.cpp
-CMakeFiles/Graph.dir/tests/unitTestsIndexPQ.cpp.o: CMakeFiles/Graph.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/machine_1997/Program/Graph/{workspceFolder}/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Graph.dir/tests/unitTestsIndexPQ.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Graph.dir/tests/unitTestsIndexPQ.cpp.o -MF CMakeFiles/Graph.dir/tests/unitTestsIndexPQ.cpp.o.d -o CMakeFiles/Graph.dir/tests/unitTestsIndexPQ.cpp.o -c /Users/machine_1997/Program/Graph/tests/unitTestsIndexPQ.cpp
+CMakeFiles/Graph.dir/tests/integrationTests.cpp.o: CMakeFiles/Graph.dir/flags.make
+CMakeFiles/Graph.dir/tests/integrationTests.cpp.o: /Users/machine_1997/Program/Graph/tests/integrationTests.cpp
+CMakeFiles/Graph.dir/tests/integrationTests.cpp.o: CMakeFiles/Graph.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/machine_1997/Program/Graph/{workspceFolder}/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Graph.dir/tests/integrationTests.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Graph.dir/tests/integrationTests.cpp.o -MF CMakeFiles/Graph.dir/tests/integrationTests.cpp.o.d -o CMakeFiles/Graph.dir/tests/integrationTests.cpp.o -c /Users/machine_1997/Program/Graph/tests/integrationTests.cpp
 
-CMakeFiles/Graph.dir/tests/unitTestsIndexPQ.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Graph.dir/tests/unitTestsIndexPQ.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/machine_1997/Program/Graph/tests/unitTestsIndexPQ.cpp > CMakeFiles/Graph.dir/tests/unitTestsIndexPQ.cpp.i
+CMakeFiles/Graph.dir/tests/integrationTests.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Graph.dir/tests/integrationTests.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/machine_1997/Program/Graph/tests/integrationTests.cpp > CMakeFiles/Graph.dir/tests/integrationTests.cpp.i
 
-CMakeFiles/Graph.dir/tests/unitTestsIndexPQ.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Graph.dir/tests/unitTestsIndexPQ.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/machine_1997/Program/Graph/tests/unitTestsIndexPQ.cpp -o CMakeFiles/Graph.dir/tests/unitTestsIndexPQ.cpp.s
+CMakeFiles/Graph.dir/tests/integrationTests.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Graph.dir/tests/integrationTests.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/machine_1997/Program/Graph/tests/integrationTests.cpp -o CMakeFiles/Graph.dir/tests/integrationTests.cpp.s
 
 CMakeFiles/Graph.dir/tests/catch_amalgamated.cpp.o: CMakeFiles/Graph.dir/flags.make
 CMakeFiles/Graph.dir/tests/catch_amalgamated.cpp.o: /Users/machine_1997/Program/Graph/tests/catch_amalgamated.cpp
@@ -147,7 +147,7 @@ Graph_OBJECTS = \
 "CMakeFiles/Graph.dir/src/edge.cpp.o" \
 "CMakeFiles/Graph.dir/src/graph.cpp.o" \
 "CMakeFiles/Graph.dir/src/indexPriorityQueue.cpp.o" \
-"CMakeFiles/Graph.dir/tests/unitTestsIndexPQ.cpp.o" \
+"CMakeFiles/Graph.dir/tests/integrationTests.cpp.o" \
 "CMakeFiles/Graph.dir/tests/catch_amalgamated.cpp.o"
 
 # External object files for target Graph
@@ -156,7 +156,7 @@ Graph_EXTERNAL_OBJECTS =
 Graph: CMakeFiles/Graph.dir/src/edge.cpp.o
 Graph: CMakeFiles/Graph.dir/src/graph.cpp.o
 Graph: CMakeFiles/Graph.dir/src/indexPriorityQueue.cpp.o
-Graph: CMakeFiles/Graph.dir/tests/unitTestsIndexPQ.cpp.o
+Graph: CMakeFiles/Graph.dir/tests/integrationTests.cpp.o
 Graph: CMakeFiles/Graph.dir/tests/catch_amalgamated.cpp.o
 Graph: CMakeFiles/Graph.dir/build.make
 Graph: CMakeFiles/Graph.dir/link.txt

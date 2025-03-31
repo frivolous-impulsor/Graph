@@ -13,8 +13,6 @@ TEST_CASE("index priority queue", "[Index PQ]"){
         q.insert(4, 8);
         std::vector<int> positionMap {2, 3, 4, 1, 0};
         std::vector<int> inverseMap {4, 3, 0, 1, 2};
-        REQUIRE(q.getPositionMap() == positionMap);
-        REQUIRE(q.getInverseMap() == inverseMap);
         REQUIRE(q.getSize() == 5);
     }
 
@@ -69,8 +67,6 @@ TEST_CASE("index priority queue", "[Index PQ]"){
 
         std::vector<int> positionMap {2, 3, 4, 1, 0}; 
         std::vector<int> inverseMap {4, 3, 0, 1, 2};
-        REQUIRE(q.getPositionMap() == positionMap);
-        REQUIRE(q.getInverseMap() == inverseMap); 
     }
 
     SECTION("insert duplicate item only update "){
