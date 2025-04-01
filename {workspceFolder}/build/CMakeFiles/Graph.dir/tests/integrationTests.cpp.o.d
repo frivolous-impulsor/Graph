@@ -986,4 +986,5 @@ CMakeFiles/Graph.dir/tests/integrationTests.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/iostream \
   /Users/machine_1997/Program/Graph/tests/../src/graph.cpp \
   /Users/machine_1997/Program/Graph/tests/../src/../include/edge.hpp \
-  /Users/machine_1997/Program/Graph/tests/../src/indexPriorityQueue.cpp
+  /Users/machine_1997/Program/Graph/tests/../src/indexPriorityQueue.cpp \
+  /Users/machine_1997/Program/Graph/tests/../src/../include/indexPriorityQueue.hpp

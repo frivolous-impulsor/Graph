@@ -1,5 +1,6 @@
 CMakeFiles/Graph.dir/src/indexPriorityQueue.cpp.o: \
   /Users/machine_1997/Program/Graph/src/indexPriorityQueue.cpp \
+  /Users/machine_1997/Program/Graph/src/../include/indexPriorityQueue.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__assert \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__assertion_handler \

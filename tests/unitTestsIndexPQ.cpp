@@ -1,5 +1,5 @@
 #include "../include/catch_amalgamated.hpp"
-#include "../src/indexPriorityQueue.cpp"
+#include "../include/indexPriorityQueue.hpp"
 #include <stdexcept>
 	
 
@@ -107,7 +107,7 @@ TEST_CASE("index priority queue", "[Index PQ]"){
 
     SECTION("integration testing on min priority queue"){
         IndexPriorityQueue<int> q {false};
-        q.insert(1,8);
+        q.insert(1,8.1);
         q.insert(2,6);
         q.insert(10,3);
         q.insert(11,3);
