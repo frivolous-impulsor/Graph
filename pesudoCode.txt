@@ -1,11 +1,20 @@
 MST(){
     s = 0   //starting vertex
     mstSet  //set that marks vertices that are connected at current mst. Begin with starting vertex
-    minPQ   //initialize a minimum priority queue for Edges
+    minPQ   //initialize a minimum priority queue of (v, distance)
     mst     //a list of edges that, at the end, will connect all vertices and has smallest overall weight
-    For all edges going from starting vertex, put into minPQ based on weight
+            //mst[v] = edge connected to v that forms the mst
+            //mst[s] will have null, meaning no edge connected to s
+    insert s in minPQ to val 0
+    insert any v thats not s in minPQ to val inf    //not yet seen an edge connecting to v, thus inf so far
 
-
-
+    while mstSet not yet have all vertices:
+        u = minPQ.pop()     //get new candidate to be inducted into mstSet, from which explore edges 
+        mstSet.add(u);
+        for edge from edges at u:
+            v is the vertex connected from u through edge
+            if v not in mstSet & w(u,v) < value of v:     //found a cut 
+                v's value in minPQ update to min{v.value, w(u,v)}
+                mst[v] = edge
     return mst
 }

@@ -958,4 +958,6 @@ CMakeFiles/Graph.dir/src/graph.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/unistd.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/set \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__tree \
-  /Users/machine_1997/Program/Graph/src/../include/edge.hpp
+  /Users/machine_1997/Program/Graph/src/../include/edge.hpp \
+  /Users/machine_1997/Program/Graph/src/../include/indexPriorityQueue.hpp \
+  /Users/machine_1997/Program/Graph/src/../include/indexPriorityQueue.tpp

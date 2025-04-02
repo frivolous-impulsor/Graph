@@ -3,6 +3,7 @@
 #include "../include/edge.hpp" 
 #include <vector>
 #include <stdexcept>
+#include "../include/indexPriorityQueue.hpp"
 
 /*
 An implementation of undirected weighted graph
@@ -36,18 +37,38 @@ public:
         this->addEdgeOneWay(f);
     }
 
-    std::vector<Edge> mst(){
-        std::vector<Edge> mst{};
-        //std::priority_queue<Edge> minPQ;
-        int startingV {0};
-        std::set<int> mstVertexSet{};
-        mstVertexSet.insert(startingV);
+    std::vector<Edge> minimumSpanningTree(){
+        double inf {std::numeric_limits<float>::infinity()};
+        Edge dummy {-1, -2};
+        std::vector<Edge> mst {};
+        for(int i {0}; i<this->getNumVertex(); ++i){
+            mst.push_back(dummy);
+        }
+        int s {0};
+        std::set<int> mstSet {};
+        mstSet.insert(s);
+        IndexPriorityQueue<int> minPQ {false};
+        for (int i {0}; i<this->getNumVertex(); ++i){
+            minPQ.insert(i, inf);
+            //std::cout<<minPQ.getValue(i)<<'\n';
+        }
+        minPQ.insert(s, 0);
 
-        
- 
+        while(mstSet.size() < this->getNumVertex()){
+            int u {minPQ.pop()};
+            mstSet.insert(u);
+            for(auto edge: this->getAdjList()[u]){
+                int v {edge.getThatVertex()};
+                if (mstSet.find(v) == mstSet.end() && edge.getWeight() < minPQ.getValue(v)){
+                    minPQ.update(v, edge.getWeight());
+                    mst[v] = edge;
+                }
+            }
+        }
 
         return mst;
     }
+
 
 
 private:
@@ -68,5 +89,6 @@ private:
         int finalSize{static_cast<int>(m_adjList[u].size())};
         m_numEdge += (finalSize - initSize);
     }
+
 
 };

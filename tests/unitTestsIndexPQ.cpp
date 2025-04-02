@@ -69,6 +69,20 @@ TEST_CASE("index priority queue", "[Index PQ]"){
         std::vector<int> inverseMap {4, 3, 0, 1, 2};
     }
 
+    SECTION("getValue from content"){
+        IndexPriorityQueue<int> q {};
+        q.insert(421, 2);
+        q.insert(43145, 1);
+        q.insert(3414, 3);
+        q.insert(22, 221);
+        q.insert(45, 4);
+        
+        REQUIRE(q.getValue(3414) == 3);
+        q.update(3414, 90);
+        REQUIRE(q.getValue(3414) == 90);
+
+    }
+
     SECTION("insert duplicate item only update "){
         IndexPriorityQueue<int> q {};
         q.insert(421, 60);

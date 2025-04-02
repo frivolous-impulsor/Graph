@@ -1,3 +1,6 @@
+#ifndef IPQ_H
+#define IPQ_H
+
 #include <iostream>
 #include <vector>
 #include <stdexcept>
@@ -13,6 +16,8 @@ public:
     int getSize();
 
     bool empty();
+
+    double getValue(T content);
 
     void insert(T content, double value);
 
@@ -47,3 +52,5 @@ private:
 };
 
 #include "indexPriorityQueue.tpp"
+
+#endif

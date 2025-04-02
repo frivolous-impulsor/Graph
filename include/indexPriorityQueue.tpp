@@ -17,6 +17,17 @@ template <typename T>
 bool IndexPriorityQueue<T>::empty(){
     return m_size < 1;
 }
+
+template <typename T>
+double IndexPriorityQueue<T>::getValue(T content){
+    if(m_content2index.find(content) == m_content2index.end()){
+        throw std::invalid_argument("no such content in priority queue");
+    }
+    int key {m_content2index[content]};
+
+    return (this->isMax())? m_values[key] : -m_values[key];
+}
+
 template <typename T>
 void IndexPriorityQueue<T>::insert(T content, double value){
     if(m_content2index.find(content) != m_content2index.end()){

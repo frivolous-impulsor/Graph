@@ -1,7 +1,7 @@
 #include "../include/catch_amalgamated.hpp"
 #include "../include/edge.hpp"
 #include "../src/graph.cpp"
-#include "../src/indexPriorityQueue.cpp"
+#include "../include/indexPriorityQueue.hpp"
 #include <stdexcept>
 	
 
@@ -147,7 +147,7 @@ TEST_CASE( "Graph Unit Tests", "[Graph]") {
         REQUIRE((*g.getAdjList()[1].begin()).getThatVertex() == 0);
     }
 }
-/*
+
 TEST_CASE( "Graph Operation Unit Tests", "[Graph Operation]") {
     SECTION("minimum spanning tree validation"){
         Graph<int> g{};
@@ -173,8 +173,15 @@ TEST_CASE( "Graph Operation Unit Tests", "[Graph Operation]") {
         g.addEdge({5,4,10});
         
         std::vector<Edge> answer {};
+        answer.push_back({-1, -2});
         answer.push_back({0,1,4});
-        REQUIRE(g.mst() == answer);
+        answer.push_back({5,2,4});
+        answer.push_back({2,3, 7});
+        answer.push_back({3,4,9});
+        answer.push_back({6,5,2});
+        answer.push_back({7,6,1});
+        answer.push_back({0,7,8});
+        answer.push_back({8,2,2});
+        REQUIRE(g.minimumSpanningTree() == answer);
     }
 }
-*/
