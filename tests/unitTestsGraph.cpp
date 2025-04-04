@@ -172,16 +172,25 @@ TEST_CASE( "Graph Operation Unit Tests", "[Graph Operation]") {
         g.addEdge({3,4,9});
         g.addEdge({5,4,10});
         
-        std::vector<Edge> answer {};
-        answer.push_back({-1, -2});
-        answer.push_back({0,1,4});
-        answer.push_back({5,2,4});
-        answer.push_back({2,3, 7});
-        answer.push_back({3,4,9});
-        answer.push_back({6,5,2});
-        answer.push_back({7,6,1});
-        answer.push_back({0,7,8});
-        answer.push_back({8,2,2});
+        std::set<Edge> answer {};
+        answer.insert({0,1,4});
+        answer.insert({5,2,4});
+        answer.insert({2,3, 7});
+        answer.insert({3,4,9});
+        answer.insert({6,5,2});
+        answer.insert({7,6,1});
+        answer.insert({0,7,8});
+        answer.insert({8,2,2});
         REQUIRE(g.minimumSpanningTree() == answer);
+    }
+
+    SECTION("minum spanning tree edge cases"){
+        Graph<std::vector<int>> g{};
+        std::set<Edge> answer {};
+        REQUIRE(g.minimumSpanningTree() == answer);
+        std::vector<int> v {};
+        g.addVertex(v);
+        REQUIRE(g.minimumSpanningTree() == answer);
+
     }
 }

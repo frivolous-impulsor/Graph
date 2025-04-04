@@ -37,10 +37,14 @@ public:
         this->addEdgeOneWay(f);
     }
 
-    std::vector<Edge> minimumSpanningTree(){
+    std::set<Edge> minimumSpanningTree(){
+        if(this->getNumVertex() < 2){
+            return {};
+        }
         double inf {std::numeric_limits<float>::infinity()};
         Edge dummy {-1, -2};
         std::vector<Edge> mst {};
+        std::set<Edge> result {};
         for(int i {0}; i<this->getNumVertex(); ++i){
             mst.push_back(dummy);
         }
@@ -65,8 +69,10 @@ public:
                 }
             }
         }
-
-        return mst;
+        for(int i {1}; i<this->getNumVertex(); ++i){
+            result.insert(mst[i]);
+        }
+        return result;
     }
 
 
