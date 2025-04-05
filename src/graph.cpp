@@ -78,7 +78,6 @@ public:
     std::vector<double> shortestPath(int start){
         std::vector<int> fromArray(this->getNumVertex(), -1);
         std::vector<double> distArray(this->getNumVertex(), 0);
-        std::vector<bool> visited(this->getNumVertex(), false);
         double inf {std::numeric_limits<double>::infinity()};
         IndexPriorityQueue<int> minDistancePQ {false};
         for(int v {0}; v < this->getNumVertex(); ++v){
@@ -89,12 +88,11 @@ public:
         distArray[start] = 0;
         while(!minDistancePQ.empty()){
             int u {minDistancePQ.pop()};
-            visited[u] = true;
             double midDistanceToStart {distArray[u]};
             for(auto edge: this->getAdjList()[u]){
                 int v {edge.getThatVertex()};
             
-                if(visited[v]){
+                if(!minDistancePQ.inQueue(v)){
                     continue;
                 }
                 double oldDistToStart {distArray[v]};
