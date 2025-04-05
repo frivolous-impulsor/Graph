@@ -167,3 +167,8 @@ void IndexPriorityQueue<T>::sink(int position){
         }
     }
 }
+
+template <typename T>
+bool IndexPriorityQueue<T>::inQueue(T content){
+    return (m_content2index.find(content) != m_content2index.end());
+}

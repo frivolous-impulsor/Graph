@@ -26,16 +26,16 @@ Dikstra(int s, int e){//shortest path from vertex s to vertex e
     minPQ.update(s, 0)  //s is 0 distance away from s itself
     while minPQ not empty{
         int u = minPQ.pop()
-        double val = minPQ.getVal(u)
-        for edge of edges u connected to{
+        double distanceToStart = minPQ.getVal(u)
+        for edge of edges u connected to still in minPQ{
             int v   //vertex other than u in edge
-            if (weight+val) of edge smaller than v's known distance to s{
-                update value of v in minPQ to (weight + val)
+            if (weight+distanceToStart) of edge smaller than v's known distance to s{
+                update value of v in minPQ to (weight + distanceToStart)
                 fromArray[v] = u
-                if(v == e){
-                    return (fromArray, minPQ.getVal(v))     //path and total distance
-                }
+
             }
         }
     }
+    return (fromArray, minPQ.getVal(v))     //path and total distance
+
 }

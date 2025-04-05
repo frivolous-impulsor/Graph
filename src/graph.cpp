@@ -75,6 +75,40 @@ public:
         return result;
     }
 
+    std::vector<double> shortestPath(int start){
+        std::vector<int> fromArray(this->getNumVertex(), -1);
+        std::vector<double> distArray(this->getNumVertex(), 0);
+        std::vector<bool> visited(this->getNumVertex(), false);
+        double inf {std::numeric_limits<double>::infinity()};
+        IndexPriorityQueue<int> minDistancePQ {false};
+        for(int v {0}; v < this->getNumVertex(); ++v){
+            minDistancePQ.insert(v, inf);
+            distArray[v] = inf;
+        }
+        minDistancePQ.update(start, 0);
+        distArray[start] = 0;
+        while(!minDistancePQ.empty()){
+            int u {minDistancePQ.pop()};
+            visited[u] = true;
+            double midDistanceToStart {distArray[u]};
+            for(auto edge: this->getAdjList()[u]){
+                int v {edge.getThatVertex()};
+            
+                if(visited[v]){
+                    continue;
+                }
+                double oldDistToStart {distArray[v]};
+                double newDistToStart {edge.getWeight() + midDistanceToStart};
+                if(newDistToStart < oldDistToStart){
+                    minDistancePQ.update(v, newDistToStart);
+                    distArray[v] = newDistToStart;
+                    fromArray[v] = u;
+                }
+            }
+        }
+        return distArray;
+    }
+
 
 
 private:
@@ -94,6 +128,10 @@ private:
         m_adjList[u].insert(e);
         int finalSize{static_cast<int>(m_adjList[u].size())};
         m_numEdge += (finalSize - initSize);
+    }
+
+    bool vertexInRange(int v){
+        return (0 <= v && v < this->getNumVertex());
     }
 
 

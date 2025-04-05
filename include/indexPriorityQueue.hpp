@@ -27,6 +27,8 @@ public:
 
     void update(T content, double newVal);
 
+    bool inQueue(T content);
+
 private:
     bool m_isMax {true};
     int m_size {0};

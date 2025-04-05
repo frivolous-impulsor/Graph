@@ -176,9 +176,9 @@ TEST_CASE( "Graph Operation Unit Tests", "[Graph Operation]") {
         answer.insert({0,1,4});
         answer.insert({5,2,4});
         answer.insert({2,3, 7});
-        answer.insert({3,4,9});
+        answer.insert({4,3,9});
         answer.insert({6,5,2});
-        answer.insert({7,6,1});
+        answer.insert({6,7,1});
         answer.insert({0,7,8});
         answer.insert({8,2,2});
         REQUIRE(g.minimumSpanningTree() == answer);
@@ -191,6 +191,30 @@ TEST_CASE( "Graph Operation Unit Tests", "[Graph Operation]") {
         std::vector<int> v {};
         g.addVertex(v);
         REQUIRE(g.minimumSpanningTree() == answer);
+
+    }
+
+    SECTION("shortest path dijkstra"){
+        Graph<int> g{};
+        int dummyContent = -1;
+        for(int i {0} ; i < 5; ++i){
+            g.addVertex(dummyContent);
+        }
+
+        g.addEdge({0,1,2});
+        g.addEdge({0,3});
+        g.addEdge({0,2, 6});
+        g.addEdge({1,4});
+        g.addEdge({2,4, 3});
+        g.addEdge({3,4, 5});
+
+
+
+        std::vector<double> result {g.shortestPath(0)};
+        std::vector<double> answer {0, 2, 6, 1, 3};
+
+        REQUIRE(result == answer);
+
 
     }
 }

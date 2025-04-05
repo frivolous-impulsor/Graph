@@ -135,6 +135,32 @@ TEST_CASE("index priority queue", "[Index PQ]"){
         REQUIRE(q.pop() == 9);
     }
 
+    SECTION("inQueue test"){
+        IndexPriorityQueue<int> q {false};
+        q.insert(1,8.1);
+        q.insert(2,6);
+        q.insert(10,3);
+        q.insert(11,3);
+        q.insert(9,111);
+        q.insert(223,90);
+        REQUIRE(q.inQueue(11));
+        REQUIRE(q.pop() == 10);
+        REQUIRE(q.pop() == 11);
+
+        REQUIRE(!q.inQueue(10));
+        REQUIRE(!q.inQueue(11));
+
+
+        q.insert(223, 0);
+        REQUIRE(q.pop() == 223);
+        q.update(9, 2);
+
+        REQUIRE(q.inQueue(9));
+        REQUIRE(q.pop() == 9);
+        REQUIRE(!q.inQueue(9));
+
+    }
+
     SECTION("fuzz testing on queue"){
         //testing functions: insert(0), update(1), pop(2), peek(3)
         int iterations {100000};
