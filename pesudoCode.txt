@@ -18,3 +18,24 @@ MST(){
                 mst[v] = edge
     return mst
 }
+
+Dikstra(int s, int e){//shortest path from vertex s to vertex e
+    int fromArray  //record the previous node for each node on shortest path, initialized to all -1
+    minPQ   //minimum priority queue that takes in vertex and its shortest distance to s pair
+    for any vertex u, insert to minPQ <u, inf>  //so far, all vertex is not yet reached, so distance to s is inf
+    minPQ.update(s, 0)  //s is 0 distance away from s itself
+    while minPQ not empty{
+        int u = minPQ.pop()
+        double val = minPQ.getVal(u)
+        for edge of edges u connected to{
+            int v   //vertex other than u in edge
+            if (weight+val) of edge smaller than v's known distance to s{
+                update value of v in minPQ to (weight + val)
+                fromArray[v] = u
+                if(v == e){
+                    return (fromArray, minPQ.getVal(v))     //path and total distance
+                }
+            }
+        }
+    }
+}
