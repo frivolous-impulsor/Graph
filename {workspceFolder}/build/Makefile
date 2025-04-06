@@ -551,6 +551,30 @@ src/graph.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/src/graph.cpp.s
 .PHONY : src/graph.cpp.s
 
+src/location.o: src/location.cpp.o
+.PHONY : src/location.o
+
+# target to build an object file
+src/location.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/src/location.cpp.o
+.PHONY : src/location.cpp.o
+
+src/location.i: src/location.cpp.i
+.PHONY : src/location.i
+
+# target to preprocess a source file
+src/location.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/src/location.cpp.i
+.PHONY : src/location.cpp.i
+
+src/location.s: src/location.cpp.s
+.PHONY : src/location.s
+
+# target to generate assembly for a file
+src/location.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/src/location.cpp.s
+.PHONY : src/location.cpp.s
+
 tests/catch_amalgamated.o: tests/catch_amalgamated.cpp.o
 .PHONY : tests/catch_amalgamated.o
 
@@ -575,29 +599,29 @@ tests/catch_amalgamated.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/tests/catch_amalgamated.cpp.s
 .PHONY : tests/catch_amalgamated.cpp.s
 
-tests/unitTestsLocation.o: tests/unitTestsLocation.cpp.o
-.PHONY : tests/unitTestsLocation.o
+tests/unitTestsGraph.o: tests/unitTestsGraph.cpp.o
+.PHONY : tests/unitTestsGraph.o
 
 # target to build an object file
-tests/unitTestsLocation.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/tests/unitTestsLocation.cpp.o
-.PHONY : tests/unitTestsLocation.cpp.o
+tests/unitTestsGraph.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/tests/unitTestsGraph.cpp.o
+.PHONY : tests/unitTestsGraph.cpp.o
 
-tests/unitTestsLocation.i: tests/unitTestsLocation.cpp.i
-.PHONY : tests/unitTestsLocation.i
+tests/unitTestsGraph.i: tests/unitTestsGraph.cpp.i
+.PHONY : tests/unitTestsGraph.i
 
 # target to preprocess a source file
-tests/unitTestsLocation.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/tests/unitTestsLocation.cpp.i
-.PHONY : tests/unitTestsLocation.cpp.i
+tests/unitTestsGraph.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/tests/unitTestsGraph.cpp.i
+.PHONY : tests/unitTestsGraph.cpp.i
 
-tests/unitTestsLocation.s: tests/unitTestsLocation.cpp.s
-.PHONY : tests/unitTestsLocation.s
+tests/unitTestsGraph.s: tests/unitTestsGraph.cpp.s
+.PHONY : tests/unitTestsGraph.s
 
 # target to generate assembly for a file
-tests/unitTestsLocation.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/tests/unitTestsLocation.cpp.s
-.PHONY : tests/unitTestsLocation.cpp.s
+tests/unitTestsGraph.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/tests/unitTestsGraph.cpp.s
+.PHONY : tests/unitTestsGraph.cpp.s
 
 # Help Target
 help:
@@ -643,12 +667,15 @@ help:
 	@echo "... src/graph.o"
 	@echo "... src/graph.i"
 	@echo "... src/graph.s"
+	@echo "... src/location.o"
+	@echo "... src/location.i"
+	@echo "... src/location.s"
 	@echo "... tests/catch_amalgamated.o"
 	@echo "... tests/catch_amalgamated.i"
 	@echo "... tests/catch_amalgamated.s"
-	@echo "... tests/unitTestsLocation.o"
-	@echo "... tests/unitTestsLocation.i"
-	@echo "... tests/unitTestsLocation.s"
+	@echo "... tests/unitTestsGraph.o"
+	@echo "... tests/unitTestsGraph.i"
+	@echo "... tests/unitTestsGraph.s"
 .PHONY : help
 
 

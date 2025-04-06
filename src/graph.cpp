@@ -5,6 +5,7 @@
 #include <stdexcept>
 #include <unordered_map>
 #include "../include/indexPriorityQueue.hpp"
+#include "../include/location.hpp"
 
 /*
 An implementation of undirected weighted graph
@@ -84,6 +85,39 @@ public:
     }
 
     std::vector<double> shortestPath(T& content){
+        int start {this->getVertex(content)};
+        std::vector<int> fromArray(this->getNumVertex(), -1);
+        std::vector<double> distArray(this->getNumVertex(), 0);
+        double inf {std::numeric_limits<double>::infinity()};
+        IndexPriorityQueue<int> minDistancePQ {false};
+        for(int v {0}; v < this->getNumVertex(); ++v){
+            minDistancePQ.insert(v, inf);
+            distArray[v] = inf;
+        }
+        minDistancePQ.update(start, 0);
+        distArray[start] = 0;
+        while(!minDistancePQ.empty()){
+            int u {minDistancePQ.pop()};
+            double midDistanceToStart {distArray[u]};
+            for(auto edge: this->getAdjList()[u]){
+                int v {edge.getThatVertex()};
+            
+                if(!minDistancePQ.inQueue(v)){
+                    continue;
+                }
+                double oldDistToStart {distArray[v]};
+                double newDistToStart {edge.getWeight() + midDistanceToStart};
+                if(newDistToStart < oldDistToStart){
+                    minDistancePQ.update(v, newDistToStart);
+                    distArray[v] = newDistToStart;
+                    fromArray[v] = u;
+                }
+            }
+        }
+        return distArray;
+    }
+
+    std::vector<double> shortestPath2(T& content){
         int start {this->getVertex(content)};
         std::vector<int> fromArray(this->getNumVertex(), -1);
         std::vector<double> distArray(this->getNumVertex(), 0);
