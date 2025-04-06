@@ -3007,7 +3007,7 @@ CMakeFiles/Graph.dir/tests/catch_amalgamated.cpp.o: /Users/machine_1997/Program/
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/stdint.h \
   /Users/machine_1997/Program/Graph/include/catch_amalgamated.hpp
 
-CMakeFiles/Graph.dir/tests/unitTestsGraph.cpp.o: /Users/machine_1997/Program/Graph/tests/unitTestsGraph.cpp \
+CMakeFiles/Graph.dir/tests/unitTestsLocation.cpp.o: /Users/machine_1997/Program/Graph/tests/unitTestsLocation.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/Availability.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/AvailabilityInternal.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/AvailabilityInternalLegacy.h \
@@ -3991,15 +3991,12 @@ CMakeFiles/Graph.dir/tests/unitTestsGraph.cpp.o: /Users/machine_1997/Program/Gra
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/stddef.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/stdint.h \
   /Users/machine_1997/Program/Graph/include/catch_amalgamated.hpp \
-  /Users/machine_1997/Program/Graph/include/edge.hpp \
-  /Users/machine_1997/Program/Graph/include/indexPriorityQueue.hpp \
-  /Users/machine_1997/Program/Graph/include/edge.hpp \
   /Users/machine_1997/Program/Graph/include/indexPriorityQueue.hpp \
   /Users/machine_1997/Program/Graph/include/indexPriorityQueue.tpp \
-  /Users/machine_1997/Program/Graph/src/graph.cpp
+  /Users/machine_1997/Program/Graph/include/location.hpp
 
 
-/Users/machine_1997/Program/Graph/tests/unitTestsGraph.cpp:
+/Users/machine_1997/Program/Graph/tests/unitTestsLocation.cpp:
 
 /Users/machine_1997/Program/Graph/include/catch_amalgamated.hpp:
 
@@ -5086,6 +5083,8 @@ CMakeFiles/Graph.dir/tests/unitTestsGraph.cpp.o: /Users/machine_1997/Program/Gra
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__locale_dir/locale_base_api/bsd_locale_defaults.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__fwd/array.h:
+
+/Users/machine_1997/Program/Graph/include/location.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__iterator/prev.h:
 

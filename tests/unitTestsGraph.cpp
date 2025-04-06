@@ -56,24 +56,34 @@ TEST_CASE( "Edges valid containers", "[Edge]" ) {
 TEST_CASE( "Graph Unit Tests", "[Graph]") {
     
     SECTION("construct empty graph and add vertices of any content type"){
-        Graph<std::vector<int>> g{};
+        Graph<double> g{};
         Edge e{0, 1};
         REQUIRE(g.getNumVertex() == 0);
-        std::vector<int> testContent{};
+        double testContent{};
         g.addVertex(testContent);
         g.addVertex(testContent);
         g.addVertex(testContent);
         REQUIRE(g.getNumVertex() == 3);
-        REQUIRE(g.getVertexList()[0].size() == 0);
+        REQUIRE(g.getAdjList()[0].size() == 0);
     }
 
     SECTION("added vertices each take a spot in adjList"){
         Graph<int> g{};
-        int testContent = -1;
+        int testContent {-1};
         g.addVertex(testContent);
         g.addVertex(testContent);
         REQUIRE(g.getAdjList()[0].size() == 0);
         REQUIRE(g.getAdjList()[1].size() == 0);
+    }
+
+    SECTION("add content and get its vertex"){
+        Graph<int> g{};
+        int testContent1 {66};
+        int testContent2 {77};
+        g.addVertex(testContent1);
+        g.addVertex(testContent2);
+        REQUIRE(g.getVertex(testContent1) == 0);
+        REQUIRE(g.getVertex(testContent2) == 1);
     }
     /*
     SECTION("add edges one way to graph"){
@@ -185,10 +195,10 @@ TEST_CASE( "Graph Operation Unit Tests", "[Graph Operation]") {
     }
 
     SECTION("minum spanning tree edge cases"){
-        Graph<std::vector<int>> g{};
+        Graph<int> g{};
         std::set<Edge> answer {};
         REQUIRE(g.minimumSpanningTree() == answer);
-        std::vector<int> v {};
+        int v {};
         g.addVertex(v);
         REQUIRE(g.minimumSpanningTree() == answer);
 
@@ -208,7 +218,8 @@ TEST_CASE( "Graph Operation Unit Tests", "[Graph Operation]") {
         g.addEdge({2,4, 3});
         g.addEdge({3,4, 5});
 
-        std::vector<double> result {g.shortestPath(0)};
+        int v {0};
+        std::vector<double> result {g.shortestPath(v)};
         std::vector<double> answer {0, 2, 6, 1, 3};
         REQUIRE(result == answer);
     }
@@ -232,8 +243,15 @@ TEST_CASE( "Graph Operation Unit Tests", "[Graph Operation]") {
         g.addEdge({7,6,2});
         g.addEdge({7,5,4});
 
-        std::vector<double> result {g.shortestPath(0)};
+        int v {0};
+        std::vector<double> result {g.shortestPath(v)};
         std::vector<double> answer {0, 3, 1, 4, 9, 7, 10, 11};
         REQUIRE(result == answer);
+    }
+}
+
+TEST_CASE("A* using location for heuristic function"){
+    SECTION("location object in graph"){
+        
     }
 }

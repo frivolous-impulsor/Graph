@@ -3,11 +3,14 @@
 #include "../include/edge.hpp" 
 #include <vector>
 #include <stdexcept>
+#include <unordered_map>
 #include "../include/indexPriorityQueue.hpp"
 
 /*
 An implementation of undirected weighted graph
 */
+
+
 
 template <typename T> 
 class Graph{
@@ -22,14 +25,19 @@ public:
     std::vector<T>& getVertexList(){return m_vertexList;}
 
     std::vector<std::set<Edge>>& getAdjList(){return m_adjList;}
+
+
     
-    void addVertex(T& content = 0){
+    void addVertex(T& content){
         m_vertexList.push_back(content);
         m_adjList.emplace_back();
+        m_content2vertex[content] = m_numVertex;
         m_numVertex++;
     }
 
-
+    int getVertex(T& content){
+        return m_content2vertex[content];
+    }
 
     void addEdge(const Edge& e){
         this->addEdgeOneWay(e);
@@ -75,7 +83,8 @@ public:
         return result;
     }
 
-    std::vector<double> shortestPath(int start){
+    std::vector<double> shortestPath(T& content){
+        int start {this->getVertex(content)};
         std::vector<int> fromArray(this->getNumVertex(), -1);
         std::vector<double> distArray(this->getNumVertex(), 0);
         double inf {std::numeric_limits<double>::infinity()};
@@ -114,6 +123,9 @@ private:
     int m_numEdge{0};
     std::vector<std::set<Edge>> m_adjList{};  //a vector of sets of edges
     std::vector<T> m_vertexList{};
+    std::unordered_map<T, int> m_content2vertex {};
+
+
 
     //only add edge from this vertex to that vertex
     void addEdgeOneWay(const Edge& e){

@@ -575,29 +575,29 @@ tests/catch_amalgamated.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/tests/catch_amalgamated.cpp.s
 .PHONY : tests/catch_amalgamated.cpp.s
 
-tests/unitTestsGraph.o: tests/unitTestsGraph.cpp.o
-.PHONY : tests/unitTestsGraph.o
+tests/unitTestsLocation.o: tests/unitTestsLocation.cpp.o
+.PHONY : tests/unitTestsLocation.o
 
 # target to build an object file
-tests/unitTestsGraph.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/tests/unitTestsGraph.cpp.o
-.PHONY : tests/unitTestsGraph.cpp.o
+tests/unitTestsLocation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/tests/unitTestsLocation.cpp.o
+.PHONY : tests/unitTestsLocation.cpp.o
 
-tests/unitTestsGraph.i: tests/unitTestsGraph.cpp.i
-.PHONY : tests/unitTestsGraph.i
+tests/unitTestsLocation.i: tests/unitTestsLocation.cpp.i
+.PHONY : tests/unitTestsLocation.i
 
 # target to preprocess a source file
-tests/unitTestsGraph.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/tests/unitTestsGraph.cpp.i
-.PHONY : tests/unitTestsGraph.cpp.i
+tests/unitTestsLocation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/tests/unitTestsLocation.cpp.i
+.PHONY : tests/unitTestsLocation.cpp.i
 
-tests/unitTestsGraph.s: tests/unitTestsGraph.cpp.s
-.PHONY : tests/unitTestsGraph.s
+tests/unitTestsLocation.s: tests/unitTestsLocation.cpp.s
+.PHONY : tests/unitTestsLocation.s
 
 # target to generate assembly for a file
-tests/unitTestsGraph.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/tests/unitTestsGraph.cpp.s
-.PHONY : tests/unitTestsGraph.cpp.s
+tests/unitTestsLocation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/tests/unitTestsLocation.cpp.s
+.PHONY : tests/unitTestsLocation.cpp.s
 
 # Help Target
 help:
@@ -646,9 +646,9 @@ help:
 	@echo "... tests/catch_amalgamated.o"
 	@echo "... tests/catch_amalgamated.i"
 	@echo "... tests/catch_amalgamated.s"
-	@echo "... tests/unitTestsGraph.o"
-	@echo "... tests/unitTestsGraph.i"
-	@echo "... tests/unitTestsGraph.s"
+	@echo "... tests/unitTestsLocation.o"
+	@echo "... tests/unitTestsLocation.i"
+	@echo "... tests/unitTestsLocation.s"
 .PHONY : help
 
 
