@@ -40,6 +40,13 @@ public:
         return m_content2vertex[content];
     }
 
+    T getContent(int vertex){
+        if(!this->vertexInRange(vertex)){
+            throw std::invalid_argument("vertex not in range");
+        }
+        return m_vertexList[vertex];
+    }
+
     void addEdge(const Edge& e){
         this->addEdgeOneWay(e);
         const Edge f{e.getThatVertex(), e.getThisVertex(), e.getWeight()};
@@ -117,7 +124,8 @@ public:
         return distArray;
     }
 
-    std::vector<double> shortestPath2(T& content){
+
+    std::vector<double> shortestPathHeuristic(Location& content){
         int start {this->getVertex(content)};
         std::vector<int> fromArray(this->getNumVertex(), -1);
         std::vector<double> distArray(this->getNumVertex(), 0);
@@ -139,9 +147,12 @@ public:
                     continue;
                 }
                 double oldDistToStart {distArray[v]};
+                Location a {this->getContent(u)};
+                Location b {this->getContent(v)};
                 double newDistToStart {edge.getWeight() + midDistanceToStart};
                 if(newDistToStart < oldDistToStart){
-                    minDistancePQ.update(v, newDistToStart);
+                    double heuristic {euclideanDist(a, b)};
+                    minDistancePQ.update(v, newDistToStart + heuristic);
                     distArray[v] = newDistToStart;
                     fromArray[v] = u;
                 }

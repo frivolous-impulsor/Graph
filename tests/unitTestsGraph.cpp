@@ -251,7 +251,49 @@ TEST_CASE( "Graph Operation Unit Tests", "[Graph Operation]") {
 }
 
 TEST_CASE("A* using location for heuristic function"){
-    SECTION("location object in graph"){
-        
+    SECTION("shortest path A* test 1"){
+        Graph<Location> g{};
+        Location dummyContent {0,0};
+        Location dummyContent2 {1,1};
+        g.addVertex(dummyContent);
+        for(int i {1} ; i < 5; ++i){
+            g.addVertex(dummyContent2);
+        }
+
+        g.addEdge({0,1,2});
+        g.addEdge({0,3});
+        g.addEdge({0,2, 6});
+        g.addEdge({1,4});
+        g.addEdge({2,4, 3});
+        g.addEdge({3,4, 5});
+
+        std::vector<double> result {g.shortestPathHeuristic(dummyContent)};
+        std::vector<double> answer {0, 2, 6, 1, 3};
+        REQUIRE(result == answer);
+    }
+
+    SECTION("shortest path A* test 2"){
+        Graph<int> g{};
+        int dummyContent = -1;
+        for(int i {0} ; i < 8; ++i){
+            g.addVertex(dummyContent);
+        }
+
+        g.addEdge({0,1,3});
+        g.addEdge({1,2,2});
+        g.addEdge({0,2,1});
+        g.addEdge({1,4,6});
+        g.addEdge({0,3,4});
+        g.addEdge({4,3,5});
+        g.addEdge({4,5,2});
+        g.addEdge({3,5,3});
+        g.addEdge({4,6,1});
+        g.addEdge({7,6,2});
+        g.addEdge({7,5,4});
+
+        int v {0};
+        std::vector<double> result {g.shortestPath(v)};
+        std::vector<double> answer {0, 3, 1, 4, 9, 7, 10, 11};
+        REQUIRE(result == answer);
     }
 }
