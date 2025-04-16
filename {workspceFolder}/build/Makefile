@@ -527,30 +527,6 @@ src/edge.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/src/edge.cpp.s
 .PHONY : src/edge.cpp.s
 
-src/graph.o: src/graph.cpp.o
-.PHONY : src/graph.o
-
-# target to build an object file
-src/graph.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/src/graph.cpp.o
-.PHONY : src/graph.cpp.o
-
-src/graph.i: src/graph.cpp.i
-.PHONY : src/graph.i
-
-# target to preprocess a source file
-src/graph.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/src/graph.cpp.i
-.PHONY : src/graph.cpp.i
-
-src/graph.s: src/graph.cpp.s
-.PHONY : src/graph.s
-
-# target to generate assembly for a file
-src/graph.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/src/graph.cpp.s
-.PHONY : src/graph.cpp.s
-
 src/location.o: src/location.cpp.o
 .PHONY : src/location.o
 
@@ -574,6 +550,30 @@ src/location.s: src/location.cpp.s
 src/location.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/src/location.cpp.s
 .PHONY : src/location.cpp.s
+
+src/undirectedGraph.o: src/undirectedGraph.cpp.o
+.PHONY : src/undirectedGraph.o
+
+# target to build an object file
+src/undirectedGraph.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/src/undirectedGraph.cpp.o
+.PHONY : src/undirectedGraph.cpp.o
+
+src/undirectedGraph.i: src/undirectedGraph.cpp.i
+.PHONY : src/undirectedGraph.i
+
+# target to preprocess a source file
+src/undirectedGraph.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/src/undirectedGraph.cpp.i
+.PHONY : src/undirectedGraph.cpp.i
+
+src/undirectedGraph.s: src/undirectedGraph.cpp.s
+.PHONY : src/undirectedGraph.s
+
+# target to generate assembly for a file
+src/undirectedGraph.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Graph.dir/build.make CMakeFiles/Graph.dir/src/undirectedGraph.cpp.s
+.PHONY : src/undirectedGraph.cpp.s
 
 tests/catch_amalgamated.o: tests/catch_amalgamated.cpp.o
 .PHONY : tests/catch_amalgamated.o
@@ -664,12 +664,12 @@ help:
 	@echo "... src/edge.o"
 	@echo "... src/edge.i"
 	@echo "... src/edge.s"
-	@echo "... src/graph.o"
-	@echo "... src/graph.i"
-	@echo "... src/graph.s"
 	@echo "... src/location.o"
 	@echo "... src/location.i"
 	@echo "... src/location.s"
+	@echo "... src/undirectedGraph.o"
+	@echo "... src/undirectedGraph.i"
+	@echo "... src/undirectedGraph.s"
 	@echo "... tests/catch_amalgamated.o"
 	@echo "... tests/catch_amalgamated.i"
 	@echo "... tests/catch_amalgamated.s"

@@ -1,6 +1,6 @@
 #include "../include/catch_amalgamated.hpp"
 #include "../include/edge.hpp"
-#include "../src/graph.cpp"
+#include "../src/undirectedGraph.cpp"
 #include "../include/indexPriorityQueue.hpp"
 #include <stdexcept>
 	
@@ -53,10 +53,10 @@ TEST_CASE( "Edges valid containers", "[Edge]" ) {
     }
 }
 
-TEST_CASE( "Graph Unit Tests", "[Graph]") {
+TEST_CASE( "UndirectedGraph Unit Tests", "[UndirectedGraph]") {
     
-    SECTION("construct empty graph and add vertices of any content type"){
-        Graph<double> g{};
+    SECTION("construct empty UndirectedGraph and add vertices of any content type"){
+        UndirectedGraph<double> g{};
         Edge e{0, 1};
         REQUIRE(g.getNumVertex() == 0);
         double testContent{};
@@ -68,7 +68,7 @@ TEST_CASE( "Graph Unit Tests", "[Graph]") {
     }
 
     SECTION("added vertices each take a spot in adjList"){
-        Graph<int> g{};
+        UndirectedGraph<int> g{};
         int testContent {-1};
         g.addVertex(testContent);
         g.addVertex(testContent);
@@ -77,7 +77,7 @@ TEST_CASE( "Graph Unit Tests", "[Graph]") {
     }
 
     SECTION("add content and get its vertex"){
-        Graph<int> g{};
+        UndirectedGraph<int> g{};
         int testContent1 {66};
         int testContent2 {77};
         g.addVertex(testContent1);
@@ -86,10 +86,10 @@ TEST_CASE( "Graph Unit Tests", "[Graph]") {
         REQUIRE(g.getVertex(testContent2) == 1);
     }
     /*
-    SECTION("add edges one way to graph"){
-        Graph<int> g{};
+    SECTION("add edges one way to UndirectedGraph"){
+        UndirectedGraph<int> g{};
         
-        //add 3 vertices 0, 1, 2 to graph
+        //add 3 vertices 0, 1, 2 to UndirectedGraph
         int dummyContent = -1;
         g.addVertex(dummyContent);
         g.addVertex(dummyContent);
@@ -120,7 +120,7 @@ TEST_CASE( "Graph Unit Tests", "[Graph]") {
     */
 
     SECTION("throw exception when attempting to add invalid edge that has undefined vertex"){
-        Graph<int> g{};
+        UndirectedGraph<int> g{};
         int dummyContent = -1;
 
         //add vertex 0, 1, 2
@@ -137,10 +137,10 @@ TEST_CASE( "Graph Unit Tests", "[Graph]") {
         }
     }
 
-    SECTION("add edges 2 ways to graph"){
-        Graph<int> g{};
+    SECTION("add edges 2 ways to UndirectedGraph"){
+        UndirectedGraph<int> g{};
         
-        //add 3 vertices 0, 1, 2 to graph
+        //add 3 vertices 0, 1, 2 to UndirectedGraph
         int dummyContent = -1;
         g.addVertex(dummyContent);
         g.addVertex(dummyContent);
@@ -158,9 +158,9 @@ TEST_CASE( "Graph Unit Tests", "[Graph]") {
     }
 }
 
-TEST_CASE( "Graph Operation Unit Tests", "[Graph Operation]") {
+TEST_CASE( "UndirectedGraph Operation Unit Tests", "[UndirectedGraph Operation]") {
     SECTION("minimum spanning tree validation"){
-        Graph<int> g{};
+        UndirectedGraph<int> g{};
         int dummyContent = -1;
         for(int i {0} ; i < 9; ++i){
             g.addVertex(dummyContent);
@@ -195,7 +195,7 @@ TEST_CASE( "Graph Operation Unit Tests", "[Graph Operation]") {
     }
 
     SECTION("minum spanning tree edge cases"){
-        Graph<int> g{};
+        UndirectedGraph<int> g{};
         std::set<Edge> answer {};
         REQUIRE(g.minimumSpanningTree() == answer);
         int v {};
@@ -205,7 +205,7 @@ TEST_CASE( "Graph Operation Unit Tests", "[Graph Operation]") {
     }
 
     SECTION("shortest path dijkstra test 1"){
-        Graph<int> g{};
+        UndirectedGraph<int> g{};
         int dummyContent = -1;
         for(int i {0} ; i < 5; ++i){
             g.addVertex(dummyContent);
@@ -225,7 +225,7 @@ TEST_CASE( "Graph Operation Unit Tests", "[Graph Operation]") {
     }
 
     SECTION("shortest path dijkstra test 2"){
-        Graph<int> g{};
+        UndirectedGraph<int> g{};
         int dummyContent = -1;
         for(int i {0} ; i < 8; ++i){
             g.addVertex(dummyContent);
@@ -252,7 +252,7 @@ TEST_CASE( "Graph Operation Unit Tests", "[Graph Operation]") {
 
 TEST_CASE("A* using location for heuristic function"){
     SECTION("shortest path A* test 1"){
-        Graph<Location> g{};
+        UndirectedGraph<Location> g{};
         Location dummyContent {0,0};
         Location dummyContent2 {1,1};
         g.addVertex(dummyContent);
@@ -273,10 +273,12 @@ TEST_CASE("A* using location for heuristic function"){
     }
 
     SECTION("shortest path A* test 2"){
-        Graph<int> g{};
-        int dummyContent = -1;
-        for(int i {0} ; i < 8; ++i){
-            g.addVertex(dummyContent);
+        UndirectedGraph<Location> g{};
+        Location dummyContent {0,0};
+        Location dummyContent2 {1,1};
+        g.addVertex(dummyContent);
+        for(int i {1} ; i < 8; ++i){
+            g.addVertex(dummyContent2);
         }
 
         g.addEdge({0,1,3});
@@ -291,8 +293,7 @@ TEST_CASE("A* using location for heuristic function"){
         g.addEdge({7,6,2});
         g.addEdge({7,5,4});
 
-        int v {0};
-        std::vector<double> result {g.shortestPath(v)};
+        std::vector<double> result {g.shortestPath(dummyContent)};
         std::vector<double> answer {0, 3, 1, 4, 9, 7, 10, 11};
         REQUIRE(result == answer);
     }
