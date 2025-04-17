@@ -3,8 +3,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/Graph.dir/src/edge.cpp.o.d"
   "CMakeFiles/Graph.dir/src/location.cpp.o"
   "CMakeFiles/Graph.dir/src/location.cpp.o.d"
-  "CMakeFiles/Graph.dir/src/undirectedGraph.cpp.o"
-  "CMakeFiles/Graph.dir/src/undirectedGraph.cpp.o.d"
   "CMakeFiles/Graph.dir/tests/catch_amalgamated.cpp.o"
   "CMakeFiles/Graph.dir/tests/catch_amalgamated.cpp.o.d"
   "CMakeFiles/Graph.dir/tests/unitTestsGraph.cpp.o"

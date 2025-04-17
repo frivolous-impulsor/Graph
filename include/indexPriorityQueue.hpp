@@ -53,6 +53,6 @@ private:
 
 };
 
-#include "indexPriorityQueue.tpp"
+#include "../src/indexPriorityQueue.tpp"
 
 #endif

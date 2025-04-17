@@ -1,6 +1,6 @@
 #include "../include/catch_amalgamated.hpp"
 #include "../include/edge.hpp"
-#include "../src/undirectedGraph.cpp"
+#include "../include/undirectedGraph.hpp"
 #include "../include/indexPriorityQueue.hpp"
 #include <stdexcept>
 	
