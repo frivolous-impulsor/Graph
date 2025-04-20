@@ -10,24 +10,22 @@ template <typename T>
 class IndexPriorityQueue{
 public:
     IndexPriorityQueue(bool isMax = true);
-
     bool isMax();
-
     int getSize();
-
     bool empty();
-
     double getValue(T content);
-
     void insert(T content, double value);
-
     T peek();
-
     T pop();
-
     void update(T content, double newVal);
 
+    //regardless max or min priority queue, the value of content will be added with incrementation
+    //that is, if incrementation is positive, value increase; incrementation is negative, value decrease
+    void increment(T content, double incrementation);
+
     bool inQueue(T content);
+
+
 
 private:
     bool m_isMax {true};
@@ -50,6 +48,7 @@ private:
     void swim(int position);
 
     void sink(int position);
+
 
 };
 

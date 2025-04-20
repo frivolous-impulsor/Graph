@@ -2853,7 +2853,7 @@ CMakeFiles/Graph.dir/tests/catch_amalgamated.cpp.o: /Users/machine_1997/Program/
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/stdint.h \
   /Users/machine_1997/Program/Graph/include/catch_amalgamated.hpp
 
-CMakeFiles/Graph.dir/tests/unitTestsGraph.cpp.o: /Users/machine_1997/Program/Graph/tests/unitTestsGraph.cpp \
+CMakeFiles/Graph.dir/tests/unitTestsIndexPQ.cpp.o: /Users/machine_1997/Program/Graph/tests/unitTestsIndexPQ.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/Availability.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/AvailabilityInternal.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/AvailabilityInternalLegacy.h \
@@ -3837,27 +3837,11 @@ CMakeFiles/Graph.dir/tests/unitTestsGraph.cpp.o: /Users/machine_1997/Program/Gra
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/stddef.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/stdint.h \
   /Users/machine_1997/Program/Graph/src/indexPriorityQueue.tpp \
-  /Users/machine_1997/Program/Graph/include/edge.hpp \
-  /Users/machine_1997/Program/Graph/include/indexPriorityQueue.hpp \
-  /Users/machine_1997/Program/Graph/include/location.hpp \
-  /Users/machine_1997/Program/Graph/include/directedGraph.hpp \
-  /Users/machine_1997/Program/Graph/src/directedGraph.tpp \
-  /Users/machine_1997/Program/Graph/include/directedGraph.hpp \
-  /Users/machine_1997/Program/Graph/include/undirectedGraph.hpp \
-  /Users/machine_1997/Program/Graph/src/undirectedGraph.tpp \
   /Users/machine_1997/Program/Graph/include/catch_amalgamated.hpp \
-  /Users/machine_1997/Program/Graph/include/edge.hpp \
-  /Users/machine_1997/Program/Graph/include/indexPriorityQueue.hpp \
-  /Users/machine_1997/Program/Graph/include/undirectedGraph.hpp
+  /Users/machine_1997/Program/Graph/include/indexPriorityQueue.hpp
 
-
-/Users/machine_1997/Program/Graph/src/undirectedGraph.tpp:
-
-/Users/machine_1997/Program/Graph/include/directedGraph.hpp:
 
 /Users/machine_1997/Program/Graph/include/indexPriorityQueue.hpp:
-
-/Users/machine_1997/Program/Graph/tests/unitTestsGraph.cpp:
 
 /Users/machine_1997/Program/Graph/include/catch_amalgamated.hpp:
 
@@ -4557,8 +4541,6 @@ CMakeFiles/Graph.dir/tests/unitTestsGraph.cpp.o: /Users/machine_1997/Program/Gra
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__type_traits/is_trivial.h:
 
-/Users/machine_1997/Program/Graph/include/undirectedGraph.hpp:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__type_traits/is_array.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__string/char_traits.h:
@@ -5169,8 +5151,6 @@ CMakeFiles/Graph.dir/tests/unitTestsGraph.cpp.o: /Users/machine_1997/Program/Gra
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/ostream:
 
-/Users/machine_1997/Program/Graph/src/directedGraph.tpp:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__compare/is_eq.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__chrono/system_clock.h:
@@ -5470,6 +5450,8 @@ CMakeFiles/Graph.dir/tests/unitTestsGraph.cpp.o: /Users/machine_1997/Program/Gra
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__algorithm/replace_copy_if.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__algorithm/ranges_reverse_copy.h:
+
+/Users/machine_1997/Program/Graph/tests/unitTestsIndexPQ.cpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__type_traits/is_member_pointer.h:
 

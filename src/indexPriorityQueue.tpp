@@ -116,6 +116,16 @@ void IndexPriorityQueue<T>::update(T content, double newVal){
 }
 
 template <typename T>
+void IndexPriorityQueue<T>::increment(T content, double incrementation){
+    if(m_content2index.find(content) == m_content2index.end()){
+        return;
+    }
+    double val {this->getValue(content)};
+    this->update(content, val + incrementation);
+}
+
+
+template <typename T>
 void IndexPriorityQueue<T>::swap(int p1, int p2){
     m_positionMap[m_inverseMap[p1]] = p2;
     m_positionMap[m_inverseMap[p2]] = p1;

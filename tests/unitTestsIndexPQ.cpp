@@ -65,8 +65,69 @@ TEST_CASE("index priority queue", "[Index PQ]"){
         q.update(22, 3);
         REQUIRE(q.peek() == 45);
 
-        std::vector<int> positionMap {2, 3, 4, 1, 0}; 
-        std::vector<int> inverseMap {4, 3, 0, 1, 2};
+    }
+
+    SECTION("update minPQ"){
+        IndexPriorityQueue<int> q {false};
+        q.insert(421, 2);
+        q.insert(445, 1);
+        q.insert(3414, 3);
+        q.insert(22, 221);
+        q.insert(45, 4);
+        
+        REQUIRE(q.peek() == 445);
+
+        q.update(445, 3);
+        q.update(45, -5);
+        REQUIRE(q.peek() == 45);
+
+    }
+
+    SECTION("increment"){
+        IndexPriorityQueue<int> q {};
+        q.insert(421, 2);
+        q.insert(43145, 1);
+        q.insert(3414, 3);
+        q.insert(22, 221);
+        q.insert(45, 4);
+        
+        q.increment(3414, 221);
+        
+
+        REQUIRE(q.peek() == 3414);
+        REQUIRE(q.getValue(3414) == 3+221);
+    }
+
+    SECTION("increment negative number"){
+        IndexPriorityQueue<int> q {};
+        q.insert(421, 2);
+        q.insert(43145, 1);
+        q.insert(3414, 3);
+        q.insert(22, 221);
+        q.insert(45, 4);
+        
+        q.increment(22, -220);
+        
+
+        REQUIRE(q.peek() == 45);
+        REQUIRE(q.getValue(22) == 1);
+    }
+
+    SECTION("increment minPQ"){
+        IndexPriorityQueue<int> q {false};
+        q.insert(421, 10);
+        q.insert(315, 8);
+        q.insert(3414, 9);
+        q.insert(22, 4);
+        q.insert(45, 5);
+        
+        REQUIRE(q.peek() == 22);
+        q.increment(421, -8);
+        REQUIRE(q.peek() == 421);
+
+        q.increment(421, 3);
+        REQUIRE(q.peek() == 22);
+
     }
 
     SECTION("getValue from content"){
