@@ -1,0 +1,12 @@
+C++ implementation of Graph
+
+Graphs are templated, meaning it accepts any data type as vertex
+
+Location is 2D coordinate datatype, a sample data type for vertex in graph
+
+Undirected Graph inherites directed graph.
+Undirected Graph possesses Minimum Spanning Tree and Dijkstra's Shortest Path member function
+
+Auxilary index priority queue ensure optimum update time efficiency as a priority queue
+
+for use, reference directed and undirected graph header file
